@@ -1,6 +1,9 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const projects = [
     {
@@ -52,13 +55,36 @@ export default function ProjectsSection() {
         <section className="bg-black py-20 lg:py-32">
             <div className="max-w-[1400px] mx-auto px-5 lg:px-20">
                 <div className="text-center mb-16 lg:mb-24">
-                    <p className="text-gray-500 text-sm mb-4 font-medium">Recent Work</p>
-                    <h2 className="text-white text-3xl lg:text-5xl font-semibold tracking-tight">Projects I've Worked On</h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                        className="text-gray-500 text-sm mb-4 font-medium"
+                    >
+                        Recent Work
+                    </motion.p>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        className="text-white text-3xl lg:text-5xl font-semibold tracking-tight"
+                    >
+                        Projects I've Worked On
+                    </motion.h2>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-                    {projects.map((project) => (
-                        <div key={project.id} className="group cursor-pointer">
+                    {projects.map((project, index) => (
+                        <motion.div
+                            key={project.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="group cursor-pointer"
+                        >
                             {/* Image Container */}
                             <div className="bg-[#0A0C10] rounded-[24px] lg:rounded-[32px] overflow-hidden mb-6 lg:mb-8 border border-white/5 relative aspect-[1.4] transition-transform duration-500 group-hover:scale-[1.02]">
                                 <Image
@@ -85,12 +111,18 @@ export default function ProjectsSection() {
                                     ))}
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
 
                 {/* View All Button */}
-                <div className="mt-20 lg:mt-32 flex justify-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="mt-20 lg:mt-32 flex justify-center"
+                >
                     <Link
                         href="/projects"
                         className="flex items-center gap-2 text-white border border-white/20 px-8 py-4 rounded-full hover:bg-white/10 transition-colors"
@@ -100,7 +132,7 @@ export default function ProjectsSection() {
                             <path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </Link>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

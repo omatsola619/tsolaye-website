@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const testimonials = [
     {
@@ -60,20 +61,32 @@ export default function TestimonialsSection() {
     return (
         <section className="bg-black py-20 lg:py-32 overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-5 lg:px-20">
-                <div className="text-center mb-16">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-16"
+                >
                     <p className="text-gray-500 text-[11px] lg:text-[13px] tracking-[0.2em] uppercase font-normal mb-4">
                         Client Testimonials
                     </p>
                     <h2 className="text-white text-3xl lg:text-5xl font-semibold tracking-tight">
                         What People Say About Me
                     </h2>
-                </div>
+                </motion.div>
 
                 {/* Desktop View (Grid) & Mobile View (Slider support structure) */}
                 {/* For this specific design, it looks like a 2-column grid that might slide. 
             Let's implement a simple grid for now that responds to the slider controls if we are treating pages of 2. */}
 
-                <div className="relative">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="relative"
+                >
                     <div className="overflow-hidden">
                         <div
                             className="flex transition-transform duration-500 ease-in-out"
@@ -134,9 +147,9 @@ export default function TestimonialsSection() {
                             />
                         ))}
                     </div>
-                </div>
+                </motion.div>
 
             </div>
-        </section>
+        </section >
     );
 }

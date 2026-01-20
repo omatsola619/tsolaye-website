@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
     return (
@@ -12,27 +15,47 @@ export default function HeroSection() {
                     {/* Left Content */}
                     <div className="space-y-5 lg:space-y-7">
                         {/* Label */}
-                        <p className="text-gray-400 text-[11px] lg:text-[13px] tracking-[0.2em] uppercase font-normal">
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            className="text-gray-400 text-[11px] lg:text-[13px] tracking-[0.2em] uppercase font-normal"
+                        >
                             PRODUCT DESIGNER
-                        </p>
+                        </motion.p>
 
                         {/* Main Heading */}
-                        <h1 className="text-white text-[32px] lg:text-[72px] xl:text-[80px] font-black leading-[1.1] lg:leading-[1.05] tracking-[0.02em] uppercase font-[family-name:var(--font-happy-go)]">
+                        <motion.h1
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                            className="text-white text-[32px] lg:text-[72px] xl:text-[80px] font-black leading-[1.1] lg:leading-[1.05] tracking-[0.02em] uppercase font-[family-name:var(--font-happy-go)]"
+                        >
                             EYEOYIBO
                             <br />
                             TSOLAYE
-                        </h1>
+                        </motion.h1>
 
                         {/* Description */}
-                        <p className="text-gray-300 text-[13px] lg:text-[15px] leading-[1.6] lg:leading-[1.7] max-w-[480px] font-normal">
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                            className="text-gray-300 text-[13px] lg:text-[15px] leading-[1.6] lg:leading-[1.7] max-w-[480px] font-normal"
+                        >
                             I help founders make the right product decisions before wrong ones
                             get expensive. By combining real user insight with AI where it
                             sharpens clarity, I turn uncertainty into products that ship faster
                             and work better.
-                        </p>
+                        </motion.p>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-col lg:flex-row gap-3 lg:gap-4">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+                            className="flex flex-col lg:flex-row gap-3 lg:gap-4"
+                        >
                             <Link
                                 href="/book"
                                 className="flex items-center justify-center gap-2 px-6 py-3.5 lg:px-7 lg:py-4 rounded-full border border-white/20 hover:border-white/40 transition-all group bg-black/40"
@@ -66,10 +89,15 @@ export default function HeroSection() {
                                     Send Email
                                 </span>
                             </Link>
-                        </div>
+                        </motion.div>
 
                         {/* Stats */}
-                        <div className="flex gap-6 lg:gap-12 pt-6 lg:pt-6 pb-8 lg:pb-0">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+                            className="flex gap-6 lg:gap-12 pt-6 lg:pt-6 pb-8 lg:pb-0"
+                        >
                             <div className="flex items-start gap-2 lg:gap-3">
                                 <div className="w-[1px] h-12 lg:h-14 bg-white/20" />
                                 <div>
@@ -105,11 +133,16 @@ export default function HeroSection() {
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
 
                     {/* Right Image */}
-                    <div className="relative flex justify-center lg:justify-end mt-0 lg:mt-0">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+                        className="relative flex justify-center lg:justify-end mt-0 lg:mt-0"
+                    >
                         <div className="relative w-full max-w-[280px] lg:max-w-[520px] aspect-[3/4] lg:aspect-[4/5] rounded-[32px] lg:rounded-[40px] overflow-hidden">
                             <Image
                                 src="/image/hero-img.svg"
@@ -119,7 +152,7 @@ export default function HeroSection() {
                                 priority
                             />
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
