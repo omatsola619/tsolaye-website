@@ -10,42 +10,42 @@ const projects = [
         id: 1,
         title: "Fitness AI Mobile App & Website",
         description: "A fintech platform that simplifies card payments while giving you so much flexibility on how to use them.",
-        image: "/image/work1.png",
+        image: "/image/project1.png",
         tags: ["Design system", "UX/UI", "Components"]
     },
     {
         id: 2,
         title: "Hatchyverse Gaming Platform",
         description: "A fintech platform that simplifies card payments while giving you so much flexibility on how to use them.",
-        image: "/image/work2.png",
+        image: "/image/project2.png",
         tags: ["Design system", "UX/UI", "Components"]
     },
     {
         id: 3,
         title: "BuildrHive Startup Website",
         description: "A fintech platform that simplifies card payments while giving you so much flexibility on how to use them.",
-        image: "/image/work2.png",
+        image: "/image/project3.png",
         tags: ["Design system", "UX/UI", "Components"]
     },
     {
         id: 4,
         title: "Pill Pal Mobile App",
         description: "A fintech platform that simplifies card payments while giving you so much flexibility on how to use them.",
-        image: "/image/work1.png",
+        image: "/image/project4.png",
         tags: ["Design system", "UX/UI", "Components"]
     },
     {
         id: 5,
         title: "Swiftcart AI Ecommerce Mobile App",
         description: "A fintech platform that simplifies card payments while giving you so much flexibility on how to use them.",
-        image: "/image/work2.png",
+        image: "/image/project5.png",
         tags: ["Design system", "UX/UI", "Components"]
     },
     {
         id: 6,
         title: "Lagos Guide Mobile App",
         description: "A fintech platform that simplifies card payments while giving you so much flexibility on how to use them.",
-        image: "/image/work1.png",
+        image: "/image/project6.png",
         tags: ["Design system", "UX/UI", "Components"]
     }
 ];

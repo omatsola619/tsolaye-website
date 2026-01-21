@@ -145,7 +145,7 @@ export default function HeroSection() {
                     >
                         <div className="relative w-full max-w-[280px] lg:max-w-[520px] aspect-[3/4] lg:aspect-[4/5] rounded-[32px] lg:rounded-[40px] overflow-hidden">
                             <Image
-                                src="/image/hero-img.svg"
+                                src="/image/hero-img.png"
                                 alt="Tsolaye - Product Designer"
                                 fill
                                 className="object-cover grayscale"
