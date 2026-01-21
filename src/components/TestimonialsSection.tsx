@@ -71,7 +71,7 @@ export default function TestimonialsSection() {
                     <p className="text-gray-500 text-[11px] lg:text-[13px] tracking-[0.2em] uppercase font-normal mb-4">
                         Client Testimonials
                     </p>
-                    <h2 className="text-white text-3xl lg:text-5xl font-semibold tracking-tight">
+                    <h2 className="text-white text-3xl lg:text-5xl font-semibold tracking-tight font-[family-name:var(--font-happy-go)]">
                         What People Say About Me
                     </h2>
                 </motion.div>

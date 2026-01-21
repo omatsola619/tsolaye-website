@@ -38,7 +38,7 @@ export default function ClientPartnerships() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-white text-3xl lg:text-4xl font-semibold mb-10 tracking-tight"
+                    className="text-white text-3xl lg:text-4xl font-semibold mb-10 tracking-tight font-[family-name:var(--font-happy-go)]"
                 >
                     Trusted by Industry Leaders
                 </motion.h2>

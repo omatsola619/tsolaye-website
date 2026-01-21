@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20 lg:mb-32">
                     {/* Branding */}
                     <div className="lg:col-span-6">
-                        <h3 className="text-white text-xl font-medium tracking-widest uppercase mb-6">EYEOYIBO TSOLAYE</h3>
+                        <h3 className="text-white text-xl font-medium tracking-widest uppercase mb-6 font-[family-name:var(--font-happy-go)]">EYEOYIBO TSOLAYE</h3>
                         <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
                             Product Designer crafting exceptional digital experiences with a focus on user-centered design and innovation.
                         </p>

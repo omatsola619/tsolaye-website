@@ -69,7 +69,7 @@ export default function ProjectsSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="text-white text-3xl lg:text-5xl font-semibold tracking-tight"
+                        className="text-white text-3xl lg:text-5xl font-semibold tracking-tight font-[family-name:var(--font-happy-go)]"
                     >
                         Projects I've Worked On
                     </motion.h2>
@@ -97,7 +97,7 @@ export default function ProjectsSection() {
 
                             {/* Content */}
                             <div className="pl-2">
-                                <h3 className="text-white text-2xl lg:text-3xl font-semibold mb-3 lg:mb-4">{project.title}</h3>
+                                <h3 className="text-white text-2xl lg:text-3xl font-semibold mb-3 lg:mb-4 font-[family-name:var(--font-happy-go)]">{project.title}</h3>
                                 <p className="text-gray-400 text-sm lg:text-base leading-relaxed mb-6 max-w-md">
                                     {project.description}
                                 </p>

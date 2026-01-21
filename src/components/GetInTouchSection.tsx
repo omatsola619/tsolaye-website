@@ -24,7 +24,7 @@ export default function GetInTouchSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-white text-3xl lg:text-5xl font-semibold tracking-tight mb-6"
+                    className="text-white text-3xl lg:text-5xl font-semibold tracking-tight mb-6 font-[family-name:var(--font-happy-go)]"
                 >
                     Ready to build
                     <br />
