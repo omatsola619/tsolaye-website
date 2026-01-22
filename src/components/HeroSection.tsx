@@ -143,12 +143,12 @@ export default function HeroSection() {
                         transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
                         className="relative flex justify-center lg:justify-end mt-0 lg:mt-0"
                     >
-                        <div className="relative w-full max-w-[280px] lg:max-w-[520px] aspect-[3/4] lg:aspect-[4/5] rounded-[32px] lg:rounded-[40px] overflow-hidden">
+                        <div className="relative w-full max-w-[340px] lg:max-w-[600px] aspect-[3/4] lg:aspect-[3/4] rounded-[32px] lg:rounded-[40px] overflow-hidden">
                             <Image
                                 src="/image/hero-img.png"
                                 alt="Tsolaye - Product Designer"
                                 fill
-                                className="object-cover grayscale"
+                                className="object-cover"
                                 priority
                             />
                         </div>
