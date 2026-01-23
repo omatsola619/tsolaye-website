@@ -58,7 +58,7 @@ const projects = [
 
 export default function ProjectsSection() {
     return (
-        <section className="bg-black py-20 lg:py-32">
+        <section id="projects" className="bg-black py-20 lg:py-32">
             <div className="max-w-[1400px] mx-auto px-5 lg:px-20">
                 <div className="text-center mb-16 lg:mb-24">
                     <motion.p

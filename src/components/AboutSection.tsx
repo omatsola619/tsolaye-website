@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function AboutSection() {
     return (
-        <section className="bg-black py-10 lg:py-22">
+        <section id="about" className="bg-black py-10 lg:py-22">
             <div className="max-w-[1400px] mx-auto px-5 lg:px-20">
                 <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20">
                     {/* Profile Image */}

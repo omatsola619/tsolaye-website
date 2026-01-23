@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 export default function GetInTouchSection() {
     return (
-        <section className="bg-black py-20 lg:py-32">
+        <section id="contact" className="bg-black py-20 lg:py-32">
             <div className="max-w-[1400px] mx-auto px-5 lg:px-20 text-center">
 
                 <motion.p
@@ -90,15 +90,15 @@ export default function GetInTouchSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.5 }}
                 >
-                    <Link
-                        href="/start"
+                    <a
+                        href="mailto:Suntsola924@gmail.com"
                         className="inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-gray-100 transition-colors"
                     >
                         Get Started
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
                             <path d="M1 11L11 1M11 1H3M11 1V9" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                    </Link>
+                    </a>
                 </motion.div>
 
             </div>

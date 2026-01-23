@@ -25,25 +25,25 @@ export default function Navbar() {
             {/* Navigation Links */}
             <div className="hidden md:flex items-center gap-12">
               <Link
-                href="/"
+                href="#home"
                 className="text-white text-[14px] lg:text-[15px] font-normal hover:text-gray-300 transition-colors"
               >
                 Home
               </Link>
               <Link
-                href="/projects"
+                href="#projects"
                 className="text-gray-400 text-[14px] lg:text-[15px] font-normal hover:text-white transition-colors"
               >
                 Projects
               </Link>
               <Link
-                href="/about"
+                href="#about"
                 className="text-gray-400 text-[14px] lg:text-[15px] font-normal hover:text-white transition-colors"
               >
                 About
               </Link>
               <Link
-                href="/contact"
+                href="#contact"
                 className="text-gray-400 text-[14px] lg:text-[15px] font-normal hover:text-white transition-colors"
               >
                 Contact
@@ -137,28 +137,28 @@ export default function Navbar() {
           {/* Menu Items */}
           <nav className="flex flex-col gap-8">
             <Link
-              href="/"
+              href="#home"
               className="text-white text-[32px] font-normal hover:text-gray-300 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link
-              href="/projects"
+              href="#projects"
               className="text-gray-400 text-[32px] font-normal hover:text-white transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
             </Link>
             <Link
-              href="/about"
+              href="#about"
               className="text-gray-400 text-[32px] font-normal hover:text-white transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
             <Link
-              href="/contact"
+              href="#contact"
               className="text-gray-400 text-[32px] font-normal hover:text-white transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >

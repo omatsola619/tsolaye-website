@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
     return (
-        <section className="relative w-full min-h-screen lg:h-[calc(100vh-88px)] overflow-hidden">
+        <section id="home" className="relative w-full min-h-screen lg:h-[calc(100vh-88px)] overflow-hidden">
             {/* Gradient Background */}
             <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#1a1f35] to-[#0a0a0a]" />
 
