@@ -49,7 +49,7 @@ export default function GetInTouchSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.3 }}
                     >
-                        <Link href="mailto:hello@example.com" className="group h-full block">
+                        <a href="mailto:Suntsola924@gmail.com" className="group h-full block">
                             <div className="border border-white/10 rounded-2xl p-10 lg:p-12 hover:border-white/20 transition-all bg-[#0A0C10] flex flex-col items-center justify-center h-full">
                                 <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center mb-6 text-gray-400 group-hover:text-white transition-colors">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -60,7 +60,7 @@ export default function GetInTouchSection() {
                                 <h3 className="text-white text-xl font-semibold mb-2 text-[#1a1f35]">Email</h3>
                                 <p className="text-gray-500 text-sm">Get In Touch Via Email</p>
                             </div>
-                        </Link>
+                        </a>
                     </motion.div>
 
                     {/* Schedule Call Card */}
@@ -70,7 +70,7 @@ export default function GetInTouchSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.4 }}
                     >
-                        <Link href="/book" className="group h-full block">
+                        <a href="https://calendly.com/suntsola924/30min" target="_blank" rel="noopener noreferrer" className="group h-full block">
                             <div className="border border-white/10 rounded-2xl p-10 lg:p-12 hover:border-white/20 transition-all bg-[#0A0C10] flex flex-col items-center justify-center h-full">
                                 <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center mb-6 text-gray-400 group-hover:text-white transition-colors">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -80,7 +80,7 @@ export default function GetInTouchSection() {
                                 <h3 className="text-white text-xl font-semibold mb-2">Schedule a Call</h3>
                                 <p className="text-gray-500 text-sm">Let's discuss your projects</p>
                             </div>
-                        </Link>
+                        </a>
                     </motion.div>
                 </div>
 
