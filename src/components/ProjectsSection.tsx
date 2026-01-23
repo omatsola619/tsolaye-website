@@ -9,44 +9,50 @@ const projects = [
     {
         id: 1,
         title: "Fitness AI Mobile App & Website",
-        description: "A fintech platform that simplifies card payments while giving you so much flexibility on how to use them.",
+        description: "A data-driven fitness platform that helps users track calories, habits, and progress with clarity instead of complexity. I designed the mobile app and web experience to turn raw health data into actionable insights, using AI to reduce friction and improve daily adherence.",
         image: "/image/project1.png",
-        tags: ["Design system", "UX/UI", "Components"]
+        tags: ["Design system", "UX/UI", "Components"],
+        link: "https://fitness-ai.fit"
     },
     {
         id: 2,
         title: "Hatchyverse Gaming Platform",
-        description: "A fintech platform that simplifies card payments while giving you so much flexibility on how to use them.",
+        description: "A Web3-powered gaming ecosystem built to merge play, ownership, and community. I worked on designing scalable interfaces that balance visual storytelling with usability ensuring complex blockchain concepts feel accessible to everyday players, prioritizing engagement and progression.",
         image: "/image/project2.png",
-        tags: ["Design system", "UX/UI", "Components"]
+        tags: ["Design system", "UX/UI", "Components"],
+        link: "https://hatchyverse.com"
     },
     {
         id: 3,
         title: "BuildrHive Startup Website",
-        description: "A fintech platform that simplifies card payments while giving you so much flexibility on how to use them.",
+        description: "A startup platform designed to help founders build products with zero upfront cost, exchanging early execution for future equity. I designed the website to clearly communicate trust, value, and process helping non-technical founders understand how ideas move from concept to product.",
         image: "/image/project3.png",
-        tags: ["Design system", "UX/UI", "Components"]
+        tags: ["Design system", "UX/UI", "Components"],
+        link: "https://www.buildrhive.com"
     },
     {
         id: 4,
-        title: "Pill Pal Mobile App",
-        description: "A fintech platform that simplifies card payments while giving you so much flexibility on how to use them.",
+        title: "Bitlock Web3 Mobile App",
+        description: "A secure digital finance app focused on trust, simplicity, and usability in Web3. I designed the mobile experience to make complex financial actions feel safe, intuitive, and predictable reducing cognitive load while increasing user confidence. The interface prioritizes clarity, hierarchy, and seamless interaction.",
         image: "/image/project4.png",
-        tags: ["Design system", "UX/UI", "Components"]
+        tags: ["Design system", "UX/UI", "Components"],
+        link: "https://www.behance.net/gallery/212266943/BitLock-Web3-Mobile-App"
     },
     {
         id: 5,
         title: "Swiftcart AI Ecommerce Mobile App",
-        description: "A fintech platform that simplifies card payments while giving you so much flexibility on how to use them.",
+        description: "An AI-powered e-commerce voice shopping assistant mobile app built to help users discover products faster and shop smarter. I designed the experience to reduce search friction, personalize discovery, and guide users from browsing to checkout with clarity.",
         image: "/image/project5.png",
-        tags: ["Design system", "UX/UI", "Components"]
+        tags: ["Design system", "UX/UI", "Components"],
+        link: "https://www.behance.net/gallery/240484695/SwiftCart-AI"
     },
     {
         id: 6,
-        title: "Lagos Guide Mobile App",
-        description: "A fintech platform that simplifies card payments while giving you so much flexibility on how to use them.",
+        title: "Pill Pal Med Reminder Mobile App",
+        description: "A health-focused mobile app designed to help users manage medications, routines, and adherence with ease. I crafted a calm, intuitive interface that simplifies reminders, progress tracking, and daily health check-ins, reducing anxiety around missed doses.",
         image: "/image/project6.png",
-        tags: ["Design system", "UX/UI", "Components"]
+        tags: ["Design system", "UX/UI", "Components"],
+        link: "https://www.behance.net/gallery/240883165/PILL-PAL"
     }
 ];
 
@@ -77,13 +83,16 @@ export default function ProjectsSection() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
                     {projects.map((project, index) => (
-                        <motion.div
+                        <motion.a
                             key={project.id}
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group cursor-pointer"
+                            className="group cursor-pointer block"
                         >
                             {/* Image Container */}
                             <div className="bg-[#0A0C10] rounded-[24px] lg:rounded-[32px] overflow-hidden mb-6 lg:mb-8 border border-white/5 relative aspect-[1.4] transition-transform duration-500 group-hover:scale-[1.02]">
@@ -111,7 +120,7 @@ export default function ProjectsSection() {
                                     ))}
                                 </div>
                             </div>
-                        </motion.div>
+                        </motion.a>
                     ))}
                 </div>
 
@@ -124,7 +133,9 @@ export default function ProjectsSection() {
                     className="mt-20 lg:mt-32 flex justify-center"
                 >
                     <Link
-                        href="/projects"
+                        href="https://www.behance.net/sundaysola"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex items-center gap-2 text-white border border-white/20 px-8 py-4 rounded-full hover:bg-white/10 transition-colors"
                     >
                         <span className="text-sm font-medium">View all Projects</span>
