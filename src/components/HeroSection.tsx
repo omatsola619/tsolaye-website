@@ -56,8 +56,10 @@ export default function HeroSection() {
                             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                             className="flex flex-col lg:flex-row gap-3 lg:gap-4"
                         >
-                            <Link
-                                href="/book"
+                            <a
+                                href="https://calendly.com/suntsola924/30min"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="flex items-center justify-center gap-2 px-6 py-3.5 lg:px-7 lg:py-4 rounded-full border border-white/20 hover:border-white/40 transition-all group bg-black/40"
                             >
                                 <span className="text-white text-[13px] lg:text-[15px] font-normal">
@@ -79,16 +81,16 @@ export default function HeroSection() {
                                         strokeLinejoin="round"
                                     />
                                 </svg>
-                            </Link>
+                            </a>
 
-                            <Link
-                                href="/contact"
+                            <a
+                                href="mailto:Suntsola924@gmail.com"
                                 className="flex items-center justify-center px-6 py-3.5 lg:px-7 lg:py-4 rounded-full bg-white hover:bg-gray-100 transition-colors"
                             >
                                 <span className="text-black text-[13px] lg:text-[15px] font-normal">
                                     Send Email
                                 </span>
-                            </Link>
+                            </a>
                         </motion.div>
 
                         {/* Stats */}
