@@ -6,6 +6,7 @@ import AboutSection from "@/components/AboutSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import GetInTouchSection from "@/components/GetInTouchSection";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <TestimonialsSection />
       <GetInTouchSection />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }

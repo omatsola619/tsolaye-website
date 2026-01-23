@@ -58,8 +58,7 @@ export default function Footer() {
                             </a>
                             <a href="https://www.behance.net/sundaysola" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M22 7H18V5H22V7ZM15.65 9.07C16.29 9.38 16.79 9.99 16.79 10.97C16.79 11.23 16.75 11.48 16.68 11.72C17.43 12.03 17.84 12.68 17.84 13.52C17.84 15.39 16.32 16.2 14.33 16.2H10.1V7.83H14.19C15.21 7.83 15.65 8.16 15.65 9.07ZM12.19 9.61V11.21H13.88C14.49 11.21 14.73 11 14.73 10.43C14.73 9.87 14.46 9.61 13.9 9.61H12.19ZM12.19 12.79V14.47H14.16C14.9 14.47 15.22 14.28 15.22 13.62C15.22 13.06 14.94 12.79 14.21 12.79H12.19ZM2 19V5H19C20.65 5 22 6.35 22 8V19H2Z" fillRule="evenodd" clipRule="evenodd" opacity="0" />
-                                    <path d="M8.57 6.64H2V17.36H4.27V9H8.57V6.64ZM14.92 11.08C15.63 11.42 16.19 12.1 16.19 13.19C16.19 13.48 16.15 13.75 16.07 14.02C16.91 14.37 17.36 15.09 17.36 16.02C17.36 18.1 15.67 19 13.46 19H8.76V9.7H13.3C14.44 9.7 14.92 10.07 14.92 11.08ZM11.08 11.68V13.46H12.96C13.64 13.46 13.9 13.22 13.9 12.59C13.9 11.97 13.6 11.68 12.98 11.68H11.08ZM11.08 15.21V17.08H13.27C14.09 17.08 14.45 16.87 14.45 16.13C14.45 15.51 14.14 15.21 13.33 15.21H11.08ZM22 7.78H17.56V5.56H22V7.78Z" />
+                                    <path d="M22 7h-4v-2h4v2zm1.8 2.9h-8.8v1.6h5.3c-.2 2-.9 2.5-3.3 2.5-.9 0-3.3-.2-3.3-3.1 0-2.6 2-3.5 3.5-3.5 1.7 0 3 .6 3.4 2.5h3.2c-.3-3.6-3.2-5-6.6-5-4 0-6.9 2.4-6.9 6.2 0 3.7 2.7 6.1 7.1 6.1 3.5 0 6.1-1.6 6.5-5.3V9.9zM7.5 7h-5v10h5c2.9 0 4.6-1.5 4.6-5s-1.7-5-4.6-5zm-.1 7.7h-2.5v-5.4h2.5c1.1 0 1.9.5 1.9 2.7 0 2.2-.8 2.7-1.9 2.7z" />
                                 </svg>
                             </a>
                         </div>
@@ -72,12 +71,12 @@ export default function Footer() {
                         © 2026 Eyeoyibo Tsolaye. All rights reserved.
                     </p>
                     <div className="flex gap-8">
-                        <Link href="/privacy" className="text-gray-500 hover:text-white transition-colors text-sm">
+                        <span className="text-gray-500 text-sm cursor-default">
                             Privacy Policy
-                        </Link>
-                        <Link href="/terms" className="text-gray-500 hover:text-white transition-colors text-sm">
+                        </span>
+                        <span className="text-gray-500 text-sm cursor-default">
                             Terms of Service
-                        </Link>
+                        </span>
                     </div>
                 </div>
             </div>
