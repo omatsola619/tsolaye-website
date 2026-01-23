@@ -7,35 +7,35 @@ import { motion } from 'framer-motion';
 const testimonials = [
     {
         id: 1,
-        name: "Sarah Johnson",
-        role: "CEO, TechStart",
-        quote: "Working with Eyeoyibo was an absolute game-changer. The design system they created transformed our entire product line.",
-        rating: 5,
-        image: "/image/idesign.svg" // Using placeholder or existing image for now
+        name: "sol omayoglu",
+        role: "Founder, Hatchyverse",
+        quote: "Tsolaye is passionate and hard working, does detailed work very effectively, uses his time well and is a value add to the entire team",
+        rating: 4,
+        initials: "SO"
     },
     {
         id: 2,
-        name: "Michael Chen",
-        role: "Product Lead, InnovateCorp",
-        quote: "Exceptional attention to detail and a deep understanding of user needs. The new mobile app designs exceeded our expectations.",
+        name: "Ananya Bhuyan",
+        role: "Product Designer, India",
+        quote: "I had the pleasure of working with Tsolaye, and he's one of the most dedicated professionals I've encountered.",
         rating: 5,
-        image: "/image/idesign.svg"
+        initials: "AB"
     },
     {
         id: 3,
-        name: "Elena Rodriguez",
-        role: "Founder, CreativeSpace",
-        quote: "A true partner in the design process. They didn't just design screens; they helped us refine our product strategy.",
+        name: "Joseph Brendan",
+        role: "Founder, Dev&Design",
+        quote: "I had the privilege of mentoring and supervising Eyeoyibo Tsolaye during a design project, and I can confidently say he is a rare talent.",
         rating: 5,
-        image: "/image/idesign.svg"
+        initials: "JB"
     },
     {
         id: 4,
-        name: "David Kim",
-        role: "CTO, FutureStream",
-        quote: "Fast, professional, and incredibly talented. The turnaround time was impressive without sacrificing quality.",
-        rating: 5,
-        image: "/image/idesign.svg"
+        name: "Kosta Corriveau",
+        role: "CEO, Mobile App Builders LLC",
+        quote: "I had the pleasure of working with Tsolaye who delivered two websites and mobile app designs with exceptional professionalism.",
+        rating: 3.5,
+        initials: "KC"
     }
 ];
 
@@ -58,6 +58,37 @@ export default function TestimonialsSection() {
         return () => clearInterval(interval);
     }, []);
 
+    const renderStars = (rating: number) => {
+        return (
+            <div className="flex gap-1 mb-6 mt-4">
+                {[1, 2, 3, 4, 5].map((star) => {
+                    const isFull = star <= rating;
+                    const isHalf = star - 0.5 === rating;
+
+                    return (
+                        <svg key={star} width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            {isFull ? (
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFC107" />
+                            ) : isHalf ? (
+                                <>
+                                    <defs>
+                                        <linearGradient id={`half-star-${star}`}>
+                                            <stop offset="50%" stopColor="#FFC107" />
+                                            <stop offset="50%" stopColor="#374151" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill={`url(#half-star-${star})`} />
+                                </>
+                            ) : (
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#374151" />
+                            )}
+                        </svg>
+                    );
+                })}
+            </div>
+        );
+    };
+
     return (
         <section className="bg-black py-20 lg:py-32 overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-5 lg:px-20">
@@ -77,9 +108,6 @@ export default function TestimonialsSection() {
                 </motion.div>
 
                 {/* Desktop View (Grid) & Mobile View (Slider support structure) */}
-                {/* For this specific design, it looks like a 2-column grid that might slide. 
-            Let's implement a simple grid for now that responds to the slider controls if we are treating pages of 2. */}
-
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -92,8 +120,6 @@ export default function TestimonialsSection() {
                             className="flex transition-transform duration-500 ease-in-out"
                             style={{ transform: `translateX(-${activeIndex * 100}%)` }}
                         >
-                            {/* chunking into pairs for desktop slide effect if needed, or just list them. 
-                        The design shows 2 cards visible. Let's group them. */}
                             {Array.from({ length: Math.ceil(testimonials.length / 2) }).map((_, pageIndex) => (
                                 <div key={pageIndex} className="min-w-full grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 px-1">
                                     {testimonials.slice(pageIndex * 2, pageIndex * 2 + 2).map((testimonial) => (
@@ -104,24 +130,15 @@ export default function TestimonialsSection() {
                                             </div>
 
                                             {/* Stars */}
-                                            <div className="flex gap-1 mb-6 mt-4">
-                                                {[...Array(testimonial.rating)].map((_, i) => (
-                                                    <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#FFC107" className="text-[#FFC107]">
-                                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                                                    </svg>
-                                                ))}
-                                            </div>
+                                            {renderStars(testimonial.rating)}
 
                                             <p className="text-gray-300 text-lg leading-relaxed mb-8 font-light">
                                                 "{testimonial.quote}"
                                             </p>
 
                                             <div className="flex items-center gap-4">
-                                                <div className="w-12 h-12 rounded-full overflow-hidden bg-white/10 relative">
-                                                    {/* Using a placeholder or the uploaded image as a generic user avatar for now since we have dummy data */}
-                                                    <div className="absolute inset-0 bg-gray-700 flex items-center justify-center text-xs text-white">
-                                                        IMG
-                                                    </div>
+                                                <div className="w-12 h-12 rounded-full overflow-hidden bg-white/10 relative flex items-center justify-center border border-white/5">
+                                                    <span className="text-white font-medium text-sm tracking-wider">{testimonial.initials}</span>
                                                 </div>
                                                 <div>
                                                     <h4 className="text-white font-semibold text-lg">{testimonial.name}</h4>
