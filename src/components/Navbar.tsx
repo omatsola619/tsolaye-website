@@ -51,8 +51,9 @@ export default function Navbar() {
             </div>
 
             {/* Download CV Button */}
-            <Link
-              href="/cv"
+            <a
+              href="/cv/Tsolaye-cv.pdf"
+              download
               className="hidden md:flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 hover:border-white/40 transition-all group"
             >
               <span className="text-white text-[13px] lg:text-[14px] font-normal">
@@ -74,7 +75,7 @@ export default function Navbar() {
                   strokeLinejoin="round"
                 />
               </svg>
-            </Link>
+            </a>
 
             {/* Mobile Menu Button */}
             <button
@@ -167,8 +168,9 @@ export default function Navbar() {
 
           {/* Download CV Button */}
           <div className="mt-auto">
-            <Link
-              href="/cv"
+            <a
+              href="/cv/Tsolaye-cv.pdf"
+              download
               className="flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-white/20 hover:border-white/40 transition-all group w-full"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -191,7 +193,7 @@ export default function Navbar() {
                   strokeLinejoin="round"
                 />
               </svg>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
