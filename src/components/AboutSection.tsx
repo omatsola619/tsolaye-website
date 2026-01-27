@@ -46,7 +46,7 @@ export default function AboutSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {/* Feature 1 */}
                     <div className="border border-white/10 rounded-2xl p-6 lg:p-8 hover:border-white/20 transition-colors bg-[#0A0C10]">
-                        <div className="w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center mb-6 text-white">
+                        <div className="w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center mb-6 text-[#B5B5B5]">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                 <circle cx="12" cy="12" r="10" />
                                 <circle cx="12" cy="12" r="4" />
@@ -60,7 +60,7 @@ export default function AboutSection() {
 
                     {/* Feature 2 */}
                     <div className="border border-white/10 rounded-2xl p-6 lg:p-8 hover:border-white/20 transition-colors bg-[#0A0C10]">
-                        <div className="w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center mb-6 text-white">
+                        <div className="w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center mb-6 text-[#B5B5B5]">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                 <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
@@ -73,7 +73,7 @@ export default function AboutSection() {
 
                     {/* Feature 3 */}
                     <div className="border border-white/10 rounded-2xl p-6 lg:p-8 hover:border-white/20 transition-colors bg-[#0A0C10]">
-                        <div className="w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center mb-6 text-white">
+                        <div className="w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center mb-6 text-[#B5B5B5]">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                 <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" />
                                 <path d="M19.4 15C20.6 15 21.6 14 21.6 12.8C21.6 11.6 20.6 10.6 19.4 10.6C18.2 10.6 17.2 11.6 17.2 12.8C17.2 14 18.2 15 19.4 15Z" />
@@ -90,7 +90,7 @@ export default function AboutSection() {
 
                     {/* Feature 4 */}
                     <div className="border border-white/10 rounded-2xl p-6 lg:p-8 hover:border-white/20 transition-colors bg-[#0A0C10]">
-                        <div className="w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center mb-6 text-white">
+                        <div className="w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center mb-6 text-[#B5B5B5]">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                 <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.5783 8.50903 2.9987 7.05 2.9987C5.59096 2.9987 4.19169 3.5783 3.16 4.61C2.1283 5.64169 1.54871 7.04096 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3094 9.93791 22.4518 9.22248 22.4518 8.5C22.4518 7.77751 22.3094 7.06208 22.0329 6.39464C21.7563 5.72719 21.351 5.12075 20.84 4.61V4.61Z" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
