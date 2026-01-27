@@ -22,7 +22,7 @@ const itemVariants = {
 
 export default function ClientPartnerships() {
     return (
-        <section className="bg-black py-24 border-t border-white/5">
+        <section className="bg-[#111010] py-24 border-t border-white/5">
             <div className="max-w-[1400px] mx-auto px-5 lg:px-20 text-center">
                 <motion.p
                     initial={{ opacity: 0, y: 10 }}

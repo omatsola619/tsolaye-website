@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 export default function GetInTouchSection() {
     return (
-        <section id="contact" className="bg-black py-20 lg:py-32">
+        <section id="contact" className="bg-[#111010] py-20 lg:py-32">
             <div className="max-w-[1400px] mx-auto px-5 lg:px-20 text-center">
 
                 <motion.p

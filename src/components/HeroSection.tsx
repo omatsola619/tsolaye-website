@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
     return (
-        <section id="home" className="relative w-full min-h-screen lg:h-[calc(100vh-88px)] overflow-hidden">
-            {/* Gradient Background */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#1a1f35] to-[#0a0a0a]" />
+        <section id="home" className="relative w-full h-[calc(100vh-72px)] lg:h-[calc(100vh-88px)] overflow-hidden bg-[#0d0d0d]">
+            {/* Background */}
+            <div className="absolute inset-0 bg-[#0d0d0d]" />
 
             <div className="relative max-w-[1400px] mx-auto px-5 lg:px-20 py-8 lg:py-16 min-h-[calc(100vh-88px)] lg:h-full">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-16 items-center lg:h-full">
@@ -56,14 +56,12 @@ export default function HeroSection() {
                             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                             className="flex flex-col lg:flex-row gap-3 lg:gap-4"
                         >
-                            <a
-                                href="https://calendly.com/suntsola924/30min"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center justify-center gap-2 px-6 py-3.5 lg:px-7 lg:py-4 rounded-full border border-white/20 hover:border-white/40 transition-all group bg-black/40"
+                            <Link
+                                href="#projects"
+                                className="flex items-center justify-center gap-2 px-6 py-3.5 lg:px-7 lg:py-4 rounded-full border border-white/20 hover:border-white/40 transition-all group bg-transparent"
                             >
                                 <span className="text-white text-[13px] lg:text-[15px] font-normal">
-                                    Book a call
+                                    View my works
                                 </span>
                                 <svg
                                     width="14"
@@ -81,16 +79,16 @@ export default function HeroSection() {
                                         strokeLinejoin="round"
                                     />
                                 </svg>
-                            </a>
+                            </Link>
 
-                            <a
-                                href="mailto:Suntsola924@gmail.com"
+                            <Link
+                                href="#contact"
                                 className="flex items-center justify-center px-6 py-3.5 lg:px-7 lg:py-4 rounded-full bg-white hover:bg-gray-100 transition-colors"
                             >
-                                <span className="text-black text-[13px] lg:text-[15px] font-normal">
-                                    Send Email
+                                <span className="text-black text-[13px] lg:text-[15px] font-bold">
+                                    Get in touch
                                 </span>
-                            </a>
+                            </Link>
                         </motion.div>
 
                         {/* Stats */}
@@ -138,14 +136,13 @@ export default function HeroSection() {
                         </motion.div>
                     </div>
 
-                    {/* Right Image */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                        className="relative flex justify-center lg:justify-end mt-0 lg:mt-0"
+                        className="relative flex justify-center lg:justify-end mt-0 lg:mt-0 h-full items-center"
                     >
-                        <div className="relative w-full max-w-[300px] lg:max-w-[500px] aspect-[3/4] lg:aspect-[3/4] rounded-[32px] lg:rounded-[40px] overflow-hidden">
+                        <div className="relative w-full max-w-[400px] lg:max-w-[500px] aspect-[4/5] rounded-[24px] lg:rounded-[32px] overflow-hidden grayscale">
                             <Image
                                 src="/image/hero-img.png"
                                 alt="Tsolaye - Product Designer"

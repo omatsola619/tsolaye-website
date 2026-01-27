@@ -90,7 +90,7 @@ export default function TestimonialsSection() {
     };
 
     return (
-        <section className="bg-black py-20 lg:py-32 overflow-hidden">
+        <section className="bg-[#111010] py-20 lg:py-32 overflow-hidden">
             <div className="max-w-[1400px] mx-auto px-5 lg:px-20">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

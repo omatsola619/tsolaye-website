@@ -58,7 +58,7 @@ const projects = [
 
 export default function ProjectsSection() {
     return (
-        <section id="projects" className="bg-black py-20 lg:py-32">
+        <section id="projects" className="bg-[#111010] py-20 lg:py-32">
             <div className="max-w-[1400px] mx-auto px-5 lg:px-20">
                 <div className="text-center mb-16 lg:mb-24">
                     <motion.p
@@ -81,7 +81,7 @@ export default function ProjectsSection() {
                     </motion.h2>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14">
                     {projects.map((project, index) => (
                         <motion.a
                             key={project.id}
@@ -95,7 +95,7 @@ export default function ProjectsSection() {
                             className="group cursor-pointer block"
                         >
                             {/* Image Container */}
-                            <div className="bg-[#0A0C10] rounded-[24px] lg:rounded-[32px] overflow-hidden mb-6 lg:mb-8 border border-white/5 relative aspect-[1.4] transition-transform duration-500 group-hover:scale-[1.02]">
+                            <div className="rounded-[24px] lg:rounded-[32px] overflow-hidden mb-6 lg:mb-8 relative aspect-[1.4] transition-transform duration-500 group-hover:scale-[1.02]">
                                 <Image
                                     src={project.image}
                                     alt={project.title}
@@ -105,16 +105,16 @@ export default function ProjectsSection() {
                             </div>
 
                             {/* Content */}
-                            <div className="pl-2">
-                                <h3 className="text-white text-2xl lg:text-3xl font-semibold mb-3 lg:mb-4 font-[family-name:var(--font-happy-go)]">{project.title}</h3>
-                                <p className="text-gray-400 text-sm lg:text-base leading-relaxed mb-6 max-w-md">
+                            <div className="pl-0">
+                                <h3 className="text-white text-3xl lg:text-[40px] font-bold mb-3 lg:mb-4 leading-tight font-[family-name:var(--font-happy-go)]">{project.title}</h3>
+                                <p className="text-[#888888] text-base lg:text-lg leading-relaxed mb-6">
                                     {project.description}
                                 </p>
 
                                 {/* Tags */}
                                 <div className="flex flex-wrap gap-2 lg:gap-3">
                                     {project.tags.map((tag, index) => (
-                                        <span key={index} className="px-4 py-1.5 rounded-full border border-white/10 text-gray-400 text-xs lg:text-sm bg-white/5">
+                                        <span key={index} className="px-5 py-2 rounded-full border border-white/20 text-white text-sm lg:text-[15px] font-medium bg-transparent">
                                             {tag}
                                         </span>
                                     ))}
