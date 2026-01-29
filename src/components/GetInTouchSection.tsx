@@ -49,7 +49,7 @@ export default function GetInTouchSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.3 }}
                     >
-                        <a href="mailto:Suntsola924@gmail.com" className="group h-full block">
+                        <a href="mailto:Tsolaye999@gmail.com" className="group h-full block">
                             <div className="border border-white/10 rounded-2xl p-10 lg:p-12 hover:border-white/20 transition-all bg-[#0A0C10] flex flex-col items-center justify-center h-full">
                                 <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center mb-6 text-gray-400 group-hover:text-white transition-colors">
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -91,10 +91,10 @@ export default function GetInTouchSection() {
                     transition={{ duration: 0.5, delay: 0.5 }}
                 >
                     <a
-                        href="mailto:Suntsola924@gmail.com"
+                        href="mailto:Tsolaye999@gmail.com"
                         className="inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-full font-medium hover:bg-gray-100 transition-colors"
                     >
-                        Get Started
+                        Hire me
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
                             <path d="M1 11L11 1M11 1H3M11 1V9" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>

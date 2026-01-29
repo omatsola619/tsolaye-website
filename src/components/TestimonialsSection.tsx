@@ -11,7 +11,7 @@ const testimonials = [
         role: "Founder, Hatchyverse",
         quote: "Tsolaye is passionate and hard working, does detailed work very effectively, uses his time well and is a value add to the entire team",
         rating: 4,
-        initials: "SO"
+        image: "/image/client1.svg"
     },
     {
         id: 2,
@@ -19,7 +19,7 @@ const testimonials = [
         role: "Product Designer, India",
         quote: "I had the pleasure of working with Tsolaye, and he's one of the most dedicated professionals I've encountered.",
         rating: 5,
-        initials: "AB"
+        image: "/image/client2.svg"
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ const testimonials = [
         role: "Founder, Dev&Design",
         quote: "I had the privilege of mentoring and supervising Eyeoyibo Tsolaye during a design project, and I can confidently say he is a rare talent.",
         rating: 5,
-        initials: "JB"
+        image: "/image/client3.svg"
     },
     {
         id: 4,
@@ -35,7 +35,7 @@ const testimonials = [
         role: "CEO, Mobile App Builders LLC",
         quote: "I had the pleasure of working with Tsolaye who delivered two websites and mobile app designs with exceptional professionalism.",
         rating: 3.5,
-        initials: "KC"
+        image: "/image/client4.svg"
     }
 ];
 
@@ -60,13 +60,13 @@ export default function TestimonialsSection() {
 
     const renderStars = (rating: number) => {
         return (
-            <div className="flex gap-1 mb-6 mt-4">
+            <div className="flex gap-1.5 mb-6 mt-8">
                 {[1, 2, 3, 4, 5].map((star) => {
                     const isFull = star <= rating;
                     const isHalf = star - 0.5 === rating;
 
                     return (
-                        <svg key={star} width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg key={star} width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             {isFull ? (
                                 <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#FFC107" />
                             ) : isHalf ? (
@@ -121,24 +121,34 @@ export default function TestimonialsSection() {
                             style={{ transform: `translateX(-${activeIndex * 100}%)` }}
                         >
                             {Array.from({ length: Math.ceil(testimonials.length / 2) }).map((_, pageIndex) => (
-                                <div key={pageIndex} className="min-w-full grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 px-1">
+                                <div key={pageIndex} className="min-w-full grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 px-1 pt-6">
                                     {testimonials.slice(pageIndex * 2, pageIndex * 2 + 2).map((testimonial) => (
-                                        <div key={testimonial.id} className="bg-[#0A0C10] border border-white/10 rounded-[24px] p-8 lg:p-10 relative group hover:border-white/20 transition-all">
+                                        <div key={testimonial.id} className="bg-[#050505] border border-white/5 rounded-[24px] p-8 lg:p-10 relative group hover:border-white/10 transition-all">
                                             {/* Quote Icon */}
-                                            <div className="absolute top-8 left-8 w-10 h-10 bg-white/5 rounded-full flex items-center justify-center -translate-y-1/2 -translate-x-1/4">
-                                                <span className="text-gray-500 text-4xl font-serif leading-none opacity-50">“</span>
+                                            <div className="absolute top-0 left-8 w-12 h-12 bg-[#111010] rounded-full flex items-center justify-center -translate-y-1/2 border border-white/5 z-10">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M10 11L8 11C6.89543 11 6 11.8954 6 13L6 17C6 18.1046 6.89543 19 8 19L10 19C11.1046 19 12 18.1046 12 17L12 13C12 11.8954 11.1046 11 10 11Z" stroke="#6B7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                    <path d="M12 13H10V7C10 5.89543 10.8954 5 12 5" stroke="#6B7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                    <path d="M20 11L18 11C16.8954 11 16 11.8954 16 13L16 17C16 18.1046 16.8954 19 18 19L20 19C21.1046 19 22 18.1046 22 17L22 13C22 11.8954 21.1046 11 20 11Z" stroke="#6B7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                    <path d="M22 13H20V7C20 5.89543 20.8954 5 22 5" stroke="#6B7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                </svg>
                                             </div>
 
                                             {/* Stars */}
                                             {renderStars(testimonial.rating)}
 
-                                            <p className="text-gray-300 text-lg leading-relaxed mb-8 font-light">
+                                            <p className="text-[#888888] text-base lg:text-lg leading-relaxed mb-8 font-light">
                                                 "{testimonial.quote}"
                                             </p>
 
-                                            <div className="flex items-center gap-4">
-                                                <div className="w-12 h-12 rounded-full overflow-hidden bg-white/10 relative flex items-center justify-center border border-white/5">
-                                                    <span className="text-white font-medium text-sm tracking-wider">{testimonial.initials}</span>
+                                            <div className="flex items-center gap-4 border-t border-white/5 pt-6">
+                                                <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/10">
+                                                    <Image
+                                                        src={testimonial.image}
+                                                        alt={testimonial.name}
+                                                        fill
+                                                        className="object-cover"
+                                                    />
                                                 </div>
                                                 <div>
                                                     <h4 className="text-white font-semibold text-lg">{testimonial.name}</h4>

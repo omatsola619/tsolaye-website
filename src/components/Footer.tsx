@@ -50,7 +50,7 @@ export default function Footer() {
                                     <path d="M19 0H5C2.239 0 0 2.239 0 5V19C0 21.761 2.239 24 5 24H19C21.762 24 24 21.761 24 19V5C24 2.239 21.762 0 19 0ZM8 19H5V8H8V19ZM6.5 6.732C5.534 6.732 4.75 5.942 4.75 4.968C4.75 3.994 5.534 3.204 6.5 3.204C7.466 3.204 8.25 3.994 8.25 4.968C8.25 5.942 7.467 6.732 6.5 6.732ZM20 19H17V13.396C17 10.028 13.44 10.374 13.44 13.396V19H10.604V8H13.441V9.558C14.754 7.056 20 6.628 20 12.28V19Z" />
                                 </svg>
                             </a>
-                            <a href="mailto:Suntsola924@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+                            <a href="mailto:Tsolaye999@gmail.com" className="text-gray-400 hover:text-white transition-colors">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <rect x="2" y="4" width="20" height="16" rx="2" />
                                     <path d="M22 6L12 13L2 6" />
