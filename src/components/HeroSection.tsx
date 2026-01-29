@@ -6,12 +6,12 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
     return (
-        <section id="home" className="relative w-full h-[calc(100vh-72px)] lg:h-[calc(100vh-88px)] overflow-hidden bg-[#0d0d0d]">
+        <section id="home" className="relative w-full min-h-[calc(100vh-72px)] lg:h-[calc(100vh-88px)] h-auto overflow-hidden bg-[#0d0d0d]">
             {/* Background */}
             <div className="absolute inset-0 bg-[#0d0d0d]" />
 
-            <div className="relative max-w-[1400px] mx-auto px-5 lg:px-20 py-8 lg:py-16 min-h-[calc(100vh-88px)] lg:h-full">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-16 items-center lg:h-full">
+            <div className="relative max-w-[1400px] mx-auto px-5 lg:px-20 py-8 lg:py-16 h-full flex items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
                     {/* Left Content */}
                     <div className="space-y-5 lg:space-y-7">
                         {/* Label */}
