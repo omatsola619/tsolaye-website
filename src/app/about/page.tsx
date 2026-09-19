@@ -1,12 +1,12 @@
 import RedesignShell from "@/components/redesign/RedesignShell";
-import HomeLeftColumn from "@/components/redesign/HomeLeftColumn";
+import AboutLeftColumn from "@/components/redesign/AboutLeftColumn";
 import { designProjects } from "@/data/projects";
 
-export default function Home() {
+export default function About() {
   return (
     <RedesignShell
-      activePath="/"
-      leftColumn={<HomeLeftColumn />}
+      activePath="/about"
+      leftColumn={<AboutLeftColumn />}
       projects={designProjects}
     />
   );

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #111010;
   --foreground: #ffffff;
@@ -16,4 +18,112 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+@keyframes logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-logo-marquee {
+  animation: logo-marquee 24s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-logo-marquee {
+    animation: none;
+  }
+}
+
+/* Redesign (Home/About/Design Engineering) light+dark theme tokens */
+:root {
+  --rd-bg: #ffffff;
+  --rd-surface: #f7f7f7;
+  --rd-surface-2: #f1f1f1;
+  --rd-text: #080808;
+  --rd-text-muted: #6b6b6b;
+  --rd-text-faint: #a2a2a2;
+  --rd-border: #d9d9d9;
+  --rd-chip-border: #c0c0c0;
+  --rd-chip-text: #070707;
+  --rd-btn-bg: #0a0a0a;
+  --rd-btn-text: #f7f7f7;
+  --rd-btn-border: #242a34;
+  --rd-card-bg: #f7f7f7;
+  --rd-testimonial-bg: rgba(255, 255, 255, 0.2);
+  --rd-arrow-bg: rgba(255, 255, 255, 0.9);
+  --rd-arrow-border: #eaecf0;
+  --rd-avatar-border: #8e8e8e;
+  --rd-divider: #d9d9d9;
+  --rd-icon-invert: none;
+}
+
+.dark .rd-card-bg {
+  background-color: var(--rd-card-bg) !important;
+}
+
+.dark .rd-contain-bg {
+  background-color: var(--rd-surface) !important;
+}
+
+.dark {
+  --rd-bg: #0a0a0a;
+  --rd-surface: #151515;
+  --rd-surface-2: #1c1c1c;
+  --rd-text: #f5f5f5;
+  --rd-text-muted: #9a9a9a;
+  --rd-text-faint: #6b6b6b;
+  --rd-border: #2a2a2a;
+  --rd-chip-border: #3a3a3a;
+  --rd-chip-text: #e5e5e5;
+  --rd-btn-bg: #f5f5f5;
+  --rd-btn-text: #0a0a0a;
+  --rd-btn-border: #d9d9d9;
+  --rd-card-bg: #161616;
+  --rd-card-border: rgba(255, 255, 255, 0.08);
+  --rd-testimonial-bg: rgba(255, 255, 255, 0.06);
+  --rd-arrow-bg: rgba(30, 30, 30, 0.9);
+  --rd-arrow-border: #333333;
+  --rd-avatar-border: #4a4a4a;
+  --rd-divider: #2a2a2a;
+  --rd-icon-invert: invert(1);
+}
+
+/* Mobile-only fixes (audited against mobile-audit-brief.md). Scoped strictly to
+   below the `lg` breakpoint (1024px) so desktop rendering never changes. */
+@media (max-width: 1023px) {
+  :root {
+    /* "Client Partnerships" label was ~2.55:1 on white — raise to >=4.5:1 */
+    --rd-text-faint: #6b6b6b;
+  }
+  .dark {
+    /* was ~3.1:1 on #0a0a0a — raise to >=4.5:1 */
+    --rd-text-faint: #8a8a8a;
+  }
+
+  .rd-marquee-mask {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  }
+
+  /* "Trusted by Industry Leaders" must stay on one line from 360-430px */
+  .rd-heading-clamp {
+    font-size: clamp(18px, 5.6vw, 24px);
+    text-wrap: balance;
+  }
+
+  .rd-safe-bottom {
+    padding-bottom: calc(48px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Mobile project-card accent buttons: light value applied inline via
+   backgroundColor, dark value swapped in through this override so each
+   project can carry a contrast-safe variant without touching desktop. */
+.dark .rd-btn-mobile-accent {
+  background-color: var(--btn-color-dark) !important;
 }
