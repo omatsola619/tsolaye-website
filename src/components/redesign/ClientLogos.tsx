@@ -5,19 +5,20 @@ function LogoSet() {
   return (
     <>
       <span className="relative shrink-0 size-[52px]">
-        <Image src="/redesign/logos/stgm.png" alt="STGM" fill className="object-contain" />
+        <Image src="/redesign/logos/stgm.png" alt="STGM" fill quality={95} className="object-contain" />
       </span>
       <span className="relative shrink-0 h-[36px] w-[162px]">
         <Image
           src="/redesign/logos/hatchypocket.png"
           alt="Hatchyverse"
           fill
+          quality={95}
           className="object-contain"
         />
       </span>
       <MobileAppBuildersLogo />
       <span className="relative shrink-0 h-[36px] w-[127px]">
-        <Image src="/redesign/logos/logo.png" alt="Petaverse" fill className="object-contain" />
+        <Image src="/redesign/logos/logo.png" alt="Petaverse" fill quality={95} className="object-contain" />
       </span>
       <span className="relative shrink-0 h-[36px] w-[131px]">
         <Image src="/redesign/logos/logo-svg.svg" alt="Perxels" fill className="object-contain" />
@@ -54,21 +55,29 @@ function MobileLogoSet() {
   );
 }
 
-export default function ClientLogos() {
+export default function ClientLogos({
+  eyebrow = "",
+  title = "Previous companies",
+}: {
+  eyebrow?: string;
+  title?: string;
+}) {
   return (
     <div className="flex flex-col gap-[24px] lg:gap-[8px] items-center w-full">
       <div className="flex flex-col gap-[8px] lg:gap-0 items-center px-[24px] py-[12px] w-full">
-        <p
-          className="font-[family-name:var(--font-dm-sans)] text-[12px] leading-[16px] tracking-[0.048px] text-center whitespace-nowrap"
-          style={{ color: "var(--rd-text-faint)" }}
-        >
-          Client Partnerships
-        </p>
+        {eyebrow && (
+          <p
+            className="font-[family-name:var(--font-dm-sans)] text-[12px] leading-[16px] tracking-[0.048px] text-center whitespace-nowrap"
+            style={{ color: "var(--rd-text-faint)" }}
+          >
+            {eyebrow}
+          </p>
+        )}
         <p
           className="rd-heading-clamp font-[family-name:var(--font-genos)] font-bold text-[24px] lg:text-[32px] leading-[1.3] lg:leading-[40px] text-center"
           style={{ color: "var(--rd-text)" }}
         >
-          Trusted by Industry Leaders
+          {title}
         </p>
       </div>
 

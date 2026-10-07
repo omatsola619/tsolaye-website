@@ -1,16 +1,20 @@
 import type { ReactNode } from "react";
 import TopNav from "./TopNav";
 import ProjectList from "./ProjectList";
-import type { Project } from "@/data/projects";
+import type { Project, ProjectSection } from "@/data/projects";
 
 export default function RedesignShell({
   activePath,
   leftColumn,
   projects,
+  sections,
+  trailingSection,
 }: {
   activePath: string;
   leftColumn: ReactNode;
-  projects: Project[];
+  projects?: Project[];
+  sections?: ProjectSection[];
+  trailingSection?: ReactNode;
 }) {
   return (
     <div
@@ -23,7 +27,7 @@ export default function RedesignShell({
       <div className="flex flex-col lg:hidden pt-[91px]">
         <div className="w-full px-5 pt-8 pb-10">{leftColumn}</div>
         <div className="w-full">
-          <ProjectList projects={projects} />
+          <ProjectList projects={projects} sections={sections} trailingSection={trailingSection} />
         </div>
       </div>
 
@@ -40,7 +44,7 @@ export default function RedesignShell({
           </div>
         </div>
 
-        <ProjectList projects={projects} />
+        <ProjectList projects={projects} sections={sections} trailingSection={trailingSection} />
       </div>
     </div>
   );

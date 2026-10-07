@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Inter, Genos, DM_Sans } from "next/font/google";
+import { Inter, Genos, DM_Sans, Manrope } from "next/font/google";
 import { ThemeProvider } from "@/context/ThemeContext";
 import "./globals.css";
 
@@ -28,9 +28,30 @@ const dmSans = DM_Sans({
   weight: ["400", "500", "600"],
 });
 
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://eyeoyibotsolaye.com"),
   title: "Tsolaye - Product Designer",
-  description: "Product Designer Portfolio",
+  description:
+    "Product designer building clear, accessible mobile and web products. Case studies: Fitness AI, Pill Pal, SwiftCart and Pockit.",
+  openGraph: {
+    title: "Tsolaye - Product Designer",
+    description:
+      "Product designer building clear, accessible mobile and web products. Case studies: Fitness AI, Pill Pal, SwiftCart and Pockit.",
+    type: "website",
+    siteName: "Tsolaye Eyeoyibo",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tsolaye - Product Designer",
+    description:
+      "Product designer building clear, accessible mobile and web products. Case studies: Fitness AI, Pill Pal, SwiftCart and Pockit.",
+  },
 };
 
 export default function RootLayout({
@@ -48,7 +69,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${happyGo.variable} ${genos.variable} ${dmSans.variable} antialiased font-sans`}
+        className={`${inter.variable} ${happyGo.variable} ${genos.variable} ${dmSans.variable} ${manrope.variable} antialiased font-sans`}
       >
         <ThemeProvider>{children}</ThemeProvider>
       </body>

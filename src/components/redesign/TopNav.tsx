@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Menu01Icon, Download04Icon } from "@hugeicons/core-free-icons";
 import PrimaryButton from "./PrimaryButton";
 import ThemeToggle from "./ThemeToggle";
 import MobileMenu from "./MobileMenu";
@@ -58,8 +60,8 @@ export default function TopNav({ activePath }: { activePath: string }) {
         <div className="hidden lg:flex items-center gap-[16px]">
           <ThemeToggle />
           <PrimaryButton
-            label="Download Cv"
-            icon="/redesign/icons/download-2-line.svg"
+            label="Download CV"
+            icon={Download04Icon}
             href="/cv/Tsolaye-cv.pdf"
             target="_blank"
           />
@@ -73,9 +75,7 @@ export default function TopNav({ activePath }: { activePath: string }) {
             className="flex items-center justify-center size-[44px] -mr-[6px] rounded-full transition-opacity hover:opacity-70"
             style={{ color: "var(--rd-text)" }}
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            </svg>
+            <HugeiconsIcon icon={Menu01Icon} size={24} />
           </button>
         </div>
       </header>

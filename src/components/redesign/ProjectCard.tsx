@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import type { Project } from "@/data/projects";
+import TagLabel from "./TagLabel";
 
 export default function ProjectCard({ project }: { project: Project }) {
   const {
@@ -37,6 +38,8 @@ export default function ProjectCard({ project }: { project: Project }) {
             src={image}
             alt={title}
             fill
+            quality={100}
+            sizes="calc(100vw - 72px)"
             className={imageFit === "contain" ? "object-contain" : "object-cover object-top"}
           />
         </a>
@@ -69,7 +72,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                 className="font-[family-name:var(--font-sans)] text-[13px] tracking-[-0.6px] whitespace-nowrap"
                 style={{ color: "var(--rd-chip-text)" }}
               >
-                {tag}
+                <TagLabel>{tag}</TagLabel>
               </span>
             </span>
           ))}
@@ -118,6 +121,8 @@ export default function ProjectCard({ project }: { project: Project }) {
             src={image}
             alt={title}
             fill
+            quality={100}
+            sizes="643px"
             className={`transition-transform duration-300 group-hover:scale-[1.03] ${
               imageFit === "contain" ? "object-contain" : "object-cover"
             }`}
@@ -154,7 +159,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                   className="font-[family-name:var(--font-sans)] text-[16px] tracking-[-0.736px] whitespace-nowrap"
                   style={{ color: "var(--rd-chip-text)" }}
                 >
-                  {tag}
+                  <TagLabel>{tag}</TagLabel>
                 </span>
               </span>
             ))}

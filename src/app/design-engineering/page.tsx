@@ -1,13 +1,13 @@
 import RedesignShell from "@/components/redesign/RedesignShell";
-import HomeLeftColumn from "@/components/redesign/HomeLeftColumn";
-import { engineeringProjects } from "@/data/projects";
+import DesignEngineeringLeftColumn from "@/components/redesign/DesignEngineeringLeftColumn";
+import DesignEngineeringRightColumnContent from "@/components/redesign/DesignEngineeringRightColumnContent";
 
 export default function DesignEngineering() {
   return (
     <RedesignShell
       activePath="/design-engineering"
-      leftColumn={<HomeLeftColumn />}
-      projects={engineeringProjects}
+      leftColumn={<DesignEngineeringLeftColumn />}
+      trailingSection={<DesignEngineeringRightColumnContent />}
     />
   );
 }

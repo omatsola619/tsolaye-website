@@ -96,8 +96,9 @@ export const designProjects: Project[] = [
   },
 ];
 
-// Shown on Design Engineering — the "engineering" project set.
-export const engineeringProjects: Project[] = [
+// Shown on Design Engineering — the "engineering" project set, grouped below
+// into titled sections (see `engineeringSections`).
+const engineeringProjects: Project[] = [
   {
     title: "Bursa Scholarship Webapp",
     description:
@@ -141,8 +142,8 @@ export const engineeringProjects: Project[] = [
     title: "Fitness AI Mobile App",
     description:
       "A data-driven fitness platform that helps users track calories, habits and progress with clarity instead of complexity. I designed the mobile app to turn data into actionable insights.",
-    image: "/redesign/projects/fitnessai.jpg",
-    imageFit: "contain",
+    image: "/redesign/projects/fitnessai.png",
+    imageFit: "cover",
     tags: ["Design system", "UX/UI", "Components"],
     buttonLabel: "View In App Store",
     buttonColor: "#1a70dd",
@@ -161,5 +162,29 @@ export const engineeringProjects: Project[] = [
     buttonColorMobileLight: "#197da8",
     cardBg: "#f7f7f7",
     href: "https://hatchyverse.com",
+  },
+];
+
+export type ProjectSection = { title: string; projects: Project[] };
+
+const byTitle = (title: string): Project => {
+  const project = engineeringProjects.find((p) => p.title === title);
+  if (!project) throw new Error(`Unknown project: ${title}`);
+  return project;
+};
+
+// Design Engineering page: work classified into two sections, in display order.
+export const engineeringSections: ProjectSection[] = [
+  {
+    title: "Client Work",
+    projects: [byTitle("Fitness AI Mobile App"), byTitle("Hatchyverse Gaming App")],
+  },
+  {
+    title: "Products I Built",
+    projects: [
+      byTitle("Bursa Scholarship Webapp"),
+      byTitle("Vantea AI Webapp"),
+      byTitle("Mesxico Cakes Website"),
+    ],
   },
 ];

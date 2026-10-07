@@ -1,8 +1,9 @@
-import Image from "next/image";
+import { HugeiconsIcon } from "@hugeicons/react";
+import type { IconSvgElement } from "@hugeicons/react";
 
 type PrimaryButtonProps = {
   label: string;
-  icon: string;
+  icon: IconSvgElement;
   href?: string;
   onClick?: () => void;
   target?: "_blank" | "_self";
@@ -30,8 +31,8 @@ export default function PrimaryButton({
       >
         {label}
       </span>
-      <span className="relative shrink-0 size-[24px]" style={{ filter: "var(--rd-icon-invert)" }}>
-        <Image src={icon} alt="" fill className="object-contain" />
+      <span className="relative shrink-0 flex items-center" style={{ color: "var(--rd-btn-text)" }}>
+        <HugeiconsIcon icon={icon} size={20} />
       </span>
     </>
   );

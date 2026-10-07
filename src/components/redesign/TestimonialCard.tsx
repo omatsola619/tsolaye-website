@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowLeft01Icon, ArrowRight01Icon } from "@hugeicons/core-free-icons";
 import { useRef, useState } from "react";
 
 const testimonials = [
@@ -78,7 +80,7 @@ export default function TestimonialCard() {
             >
               <div className="flex gap-[8px] items-center w-full">
                 <span className="relative shrink-0 size-[40px] rounded-full overflow-hidden">
-                  <Image src={t.image} alt={t.name} fill className="object-cover" />
+                  <Image src={t.image} alt={t.name} fill quality={95} className="object-cover" />
                 </span>
                 <div className="flex flex-col items-start min-w-0 flex-1">
                   <p
@@ -120,8 +122,8 @@ export default function TestimonialCard() {
               className="flex items-center justify-center size-[40px] rounded-full backdrop-blur-[4px] border"
               style={{ backgroundColor: "var(--rd-arrow-bg)", borderColor: "var(--rd-arrow-border)" }}
             >
-              <span style={{ filter: "var(--rd-icon-invert)", opacity: 0.7 }}>
-                <Image src="/redesign/icons/arrow-left.svg" alt="" width={20} height={20} />
+              <span style={{ color: "var(--rd-text)", opacity: 0.7 }}>
+                <HugeiconsIcon icon={ArrowLeft01Icon} size={20} />
               </span>
             </span>
           </button>
@@ -138,8 +140,8 @@ export default function TestimonialCard() {
               className="flex items-center justify-center size-[40px] rounded-full backdrop-blur-[4px] border"
               style={{ backgroundColor: "var(--rd-arrow-bg)", borderColor: "var(--rd-arrow-border)" }}
             >
-              <span style={{ filter: "var(--rd-icon-invert)", opacity: 0.7 }}>
-                <Image src="/redesign/icons/arrow-right.svg" alt="" width={20} height={20} />
+              <span style={{ color: "var(--rd-text)", opacity: 0.7 }}>
+                <HugeiconsIcon icon={ArrowRight01Icon} size={20} />
               </span>
             </span>
           </button>
@@ -158,7 +160,7 @@ export default function TestimonialCard() {
                 className="relative shrink-0 size-[48px] rounded-full border-[1.5px] overflow-hidden"
                 style={{ borderColor: "var(--rd-avatar-border)" }}
               >
-                <Image src={current.image} alt={current.name} fill className="object-cover" />
+                <Image src={current.image} alt={current.name} fill quality={95} className="object-cover" />
               </span>
               <div className="flex flex-col items-start">
                 <p
@@ -187,8 +189,8 @@ export default function TestimonialCard() {
                 }`}
                 style={{ backgroundColor: "var(--rd-arrow-bg)", borderColor: "var(--rd-arrow-border)" }}
               >
-                <span style={{ filter: "var(--rd-icon-invert)" }}>
-                  <Image src="/redesign/icons/arrow-left.svg" alt="" width={24} height={24} />
+                <span style={{ color: "var(--rd-text)" }}>
+                  <HugeiconsIcon icon={ArrowLeft01Icon} size={24} />
                 </span>
               </button>
               <button
@@ -201,8 +203,8 @@ export default function TestimonialCard() {
                 }`}
                 style={{ backgroundColor: "var(--rd-arrow-bg)", borderColor: "var(--rd-arrow-border)" }}
               >
-                <span style={{ filter: "var(--rd-icon-invert)" }}>
-                  <Image src="/redesign/icons/arrow-right.svg" alt="" width={24} height={24} />
+                <span style={{ color: "var(--rd-text)" }}>
+                  <HugeiconsIcon icon={ArrowRight01Icon} size={24} />
                 </span>
               </button>
             </div>
