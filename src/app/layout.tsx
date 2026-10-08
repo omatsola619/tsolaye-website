@@ -36,7 +36,10 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://eyeoyibotsolaye.com"),
-  title: "Tsolaye - Product Designer",
+  title: {
+    default: "Tsolaye - Product Designer",
+    template: "%s | Tsolaye",
+  },
   description:
     "Product designer building clear, accessible mobile and web products. Case studies: Fitness AI, Pill Pal, SwiftCart and Pockit.",
   openGraph: {
@@ -64,7 +67,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.add('dark');}}catch(e){}})();`,
+            __html: `(function(){document.documentElement.classList.add('js');setTimeout(function(){document.querySelectorAll('[data-reveal]:not([data-reveal-state])').forEach(function(e){e.setAttribute('data-reveal-state','done');});},4000);try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.add('dark');}}catch(e){}})();`,
           }}
         />
       </head>
