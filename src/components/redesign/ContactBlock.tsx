@@ -21,8 +21,6 @@ export default function ContactBlock() {
       <div className="flex flex-wrap gap-[16px] items-center">
         <a
           href={`mailto:${EMAIL}`}
-          target="_blank"
-          rel="noreferrer"
           className="bg-white flex gap-[10px] items-center justify-center px-[24px] py-[16px] rounded-[32px] shrink-0 transition-opacity hover:opacity-90"
         >
           <span className="font-[family-name:var(--font-dm-sans)] font-semibold text-[14px] text-[#121212] tracking-[0.014px] whitespace-nowrap">
@@ -34,8 +32,6 @@ export default function ContactBlock() {
         </a>
         <a
           href={`mailto:${EMAIL}`}
-          target="_blank"
-          rel="noreferrer"
           className="font-[family-name:var(--font-dm-sans)] font-medium text-[16px] text-white whitespace-nowrap hover:opacity-80 transition-opacity"
         >
           {EMAIL}
@@ -72,7 +68,7 @@ export default function ContactBlock() {
         </a>
         <a
           href={CV_PATH}
-          download
+          download="Tsolaye-Eyeoyibo-CV.pdf"
           className="flex items-center gap-[6px] font-[family-name:var(--font-dm-sans)] font-medium text-[15px] text-[#bfbdb2] hover:text-white transition-colors"
         >
           <HugeiconsIcon icon={Download04Icon} size={16} />

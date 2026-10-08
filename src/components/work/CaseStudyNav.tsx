@@ -28,8 +28,8 @@ export default function CaseStudyNav() {
         </nav>
         <a
           href="/cv/Tsolaye-cv.pdf"
-          target="_blank"
-          rel="noreferrer"
+          download="Tsolaye-Eyeoyibo-CV.pdf"
+          aria-label="Download CV"
           className="flex items-center gap-[10px] px-4 lg:px-[24px] py-[12px] lg:py-[16px] rounded-[32px] bg-[#0a0a0a] text-white text-[13px] lg:text-[14px] font-semibold hover:opacity-90 transition-opacity whitespace-nowrap shrink-0"
         >
           <span className="hidden sm:inline">Download CV</span>

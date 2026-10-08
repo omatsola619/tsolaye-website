@@ -5,23 +5,24 @@ function LogoSet() {
   return (
     <>
       <span className="relative shrink-0 size-[52px]">
-        <Image src="/redesign/logos/stgm.png" alt="STGM" fill quality={95} className="object-contain" />
+        <Image src="/redesign/logos/stgm.png" alt="STGM" fill sizes="52px" quality={95} className="object-contain" />
       </span>
       <span className="relative shrink-0 h-[36px] w-[162px]">
         <Image
           src="/redesign/logos/hatchypocket.png"
           alt="Hatchyverse"
           fill
+          sizes="162px"
           quality={95}
           className="object-contain"
         />
       </span>
       <MobileAppBuildersLogo />
       <span className="relative shrink-0 h-[36px] w-[127px]">
-        <Image src="/redesign/logos/logo.png" alt="Petaverse" fill quality={95} className="object-contain" />
+        <Image src="/redesign/logos/logo.png" alt="Petaverse" fill sizes="127px" quality={95} className="object-contain" />
       </span>
       <span className="relative shrink-0 h-[36px] w-[131px]">
-        <Image src="/redesign/logos/logo-svg.svg" alt="Perxels" fill className="object-contain" />
+        <Image src="/redesign/logos/logo-svg.svg" alt="Perxels" fill sizes="131px" className="object-contain" />
       </span>
     </>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import Link from "next/link";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Menu01Icon, Download04Icon } from "@hugeicons/core-free-icons";
@@ -16,6 +16,8 @@ const links = [
 
 export default function TopNav({ activePath }: { activePath: string }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
 
   return (
     <>
@@ -63,14 +65,17 @@ export default function TopNav({ activePath }: { activePath: string }) {
             label="Download CV"
             icon={Download04Icon}
             href="/cv/Tsolaye-cv.pdf"
-            target="_blank"
+            download="Tsolaye-Eyeoyibo-CV.pdf"
           />
         </div>
 
         <div className="flex lg:hidden items-center gap-[8px]">
           <ThemeToggle />
           <button
+            ref={menuButtonRef}
             onClick={() => setMenuOpen(true)}
+            aria-haspopup="dialog"
+            aria-expanded={menuOpen}
             aria-label="Open menu"
             className="flex items-center justify-center size-[44px] -mr-[6px] rounded-full transition-opacity hover:opacity-70"
             style={{ color: "var(--rd-text)" }}
@@ -80,7 +85,7 @@ export default function TopNav({ activePath }: { activePath: string }) {
         </div>
       </header>
 
-      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} activePath={activePath} />
+      <MobileMenu open={menuOpen} onClose={closeMenu} activePath={activePath} returnFocusRef={menuButtonRef} />
     </>
   );
 }

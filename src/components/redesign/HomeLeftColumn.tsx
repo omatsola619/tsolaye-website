@@ -41,8 +41,6 @@ export default function HomeLeftColumn() {
         <div className="lg:hidden flex flex-col gap-[12px] w-full">
           <a
             href={`mailto:${EMAIL}`}
-            target="_blank"
-            rel="noreferrer"
             className="flex gap-[6px] items-center justify-center h-[48px] px-3 rounded-full transition-opacity hover:opacity-80"
             style={{ backgroundColor: "var(--rd-btn-bg)" }}
           >

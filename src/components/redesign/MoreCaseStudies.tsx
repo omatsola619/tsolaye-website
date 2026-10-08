@@ -26,7 +26,7 @@ export default function MoreCaseStudies() {
           style={{ borderColor: "var(--rd-divider)" }}
         >
           <span className="relative h-[56px] w-[80px] lg:h-[72px] lg:w-[112px] rounded-[10px] overflow-hidden shrink-0">
-            <Image src={item.image} alt={item.title} fill quality={95} className="object-cover" />
+            <Image src={item.image} alt={item.title} fill sizes="(min-width: 1024px) 112px, 80px" quality={95} className="object-cover" />
           </span>
           <span className="flex flex-col gap-[2px] items-start min-w-0 flex-1">
             <span

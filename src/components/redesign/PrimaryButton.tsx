@@ -7,6 +7,8 @@ type PrimaryButtonProps = {
   href?: string;
   onClick?: () => void;
   target?: "_blank" | "_self";
+  /** Saves the linked file instead of opening it; value is the saved file name. */
+  download?: string;
 };
 
 export default function PrimaryButton({
@@ -15,6 +17,7 @@ export default function PrimaryButton({
   href,
   onClick,
   target,
+  download,
 }: PrimaryButtonProps) {
   const className =
     "border flex gap-[10px] items-center justify-center px-[24px] py-[16px] rounded-[32px] shrink-0 transition-opacity hover:opacity-80";
@@ -39,7 +42,12 @@ export default function PrimaryButton({
 
   if (href) {
     return (
-      <a href={href} target={target} className={className} style={style}>
+      <a
+        href={href}
+        target={target}
+        rel={target === "_blank" ? "noopener noreferrer" : undefined}
+        download={download}
+        className={className} style={style}>
         {content}
       </a>
     );

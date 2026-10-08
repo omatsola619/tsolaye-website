@@ -1,8 +1,9 @@
-import { ArrowUpRight01Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowUpRight01Icon, Linkedin01Icon } from "@hugeicons/core-free-icons";
 import PrimaryButton from "./PrimaryButton";
 import ClientLogos from "./ClientLogos";
 import TestimonialCard from "./TestimonialCard";
-import { EMAIL } from "@/data/contact";
+import { EMAIL, LINKEDIN_URL } from "@/data/contact";
 
 export default function DesignEngineeringLeftColumn() {
   return (
@@ -40,8 +41,6 @@ export default function DesignEngineeringLeftColumn() {
         <div className="lg:hidden flex flex-col gap-[12px] w-full">
           <a
             href={`mailto:${EMAIL}`}
-            target="_blank"
-            rel="noreferrer"
             className="flex gap-[6px] items-center justify-center h-[48px] px-3 rounded-full transition-opacity hover:opacity-80"
             style={{ backgroundColor: "var(--rd-btn-bg)" }}
           >
@@ -52,11 +51,44 @@ export default function DesignEngineeringLeftColumn() {
               Email me
             </span>
           </a>
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="flex gap-[6px] items-center justify-center h-[48px] px-3 rounded-full border transition-opacity hover:opacity-70"
+            style={{ borderColor: "var(--rd-border)" }}
+          >
+            <span className="relative shrink-0 flex items-center" style={{ color: "var(--rd-text)" }}>
+              <HugeiconsIcon icon={Linkedin01Icon} size={16} />
+            </span>
+            <span
+              className="font-[family-name:var(--font-dm-sans)] font-medium text-[15px] whitespace-nowrap"
+              style={{ color: "var(--rd-text)" }}
+            >
+              LinkedIn
+            </span>
+          </a>
         </div>
 
         {/* ---------- Desktop ---------- */}
         <div className="hidden lg:flex gap-[12px] items-center">
           <PrimaryButton label="Email me" icon={ArrowUpRight01Icon} href={`mailto:${EMAIL}`} />
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="flex gap-[6px] items-center px-[8px] py-[4px] hover:opacity-70 transition-opacity"
+          >
+            <span className="relative shrink-0 flex items-center" style={{ color: "var(--rd-text)" }}>
+              <HugeiconsIcon icon={Linkedin01Icon} size={16} />
+            </span>
+            <span
+              className="font-[family-name:var(--font-dm-sans)] font-medium text-[16px] tracking-[-0.096px] whitespace-nowrap"
+              style={{ color: "var(--rd-text)" }}
+            >
+              LinkedIn
+            </span>
+          </a>
         </div>
       </div>
 

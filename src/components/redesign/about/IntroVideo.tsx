@@ -9,13 +9,14 @@ export default function IntroVideo() {
         className="flex items-center gap-[8px] font-[family-name:var(--font-dm-sans)] font-semibold text-[28px]"
         style={{ color: "var(--rd-text)" }}
       >
-        Meet me in 90 seconds <span>👇</span>
+        Meet me in 90 seconds <span aria-hidden="true">👇</span>
       </p>
 
       <a
         href="https://youtu.be/iBz5lxVmzl8"
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
+        aria-label="Watch intro video on YouTube (opens in a new tab)"
         className="group relative w-full aspect-[691/389] rounded-[20px] overflow-hidden block"
       >
         <Image

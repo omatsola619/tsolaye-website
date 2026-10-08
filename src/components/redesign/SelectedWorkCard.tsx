@@ -133,7 +133,7 @@ export default function SelectedWorkCard({ item }: { item: SelectedWorkItem }) {
         </a>
 
         <div className="flex flex-col gap-[12px] items-start px-[32px] py-[16px] w-full">
-          <div className="flex gap-[12px] items-center">
+          <div className="flex flex-wrap gap-x-[12px] gap-y-[6px] items-center max-w-full">
             <span
               className="flex items-center justify-center px-[10px] py-[4px] rounded-full shrink-0"
               style={{ backgroundColor: statusBg }}
@@ -146,7 +146,7 @@ export default function SelectedWorkCard({ item }: { item: SelectedWorkItem }) {
               </span>
             </span>
             <span
-              className="font-[family-name:var(--font-dm-sans)] font-medium text-[14px] whitespace-nowrap"
+              className="font-[family-name:var(--font-dm-sans)] font-medium text-[14px] min-w-0 xl:whitespace-nowrap"
               style={{ color: "var(--rd-text-muted)" }}
             >
               {context}

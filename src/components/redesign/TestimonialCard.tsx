@@ -43,8 +43,8 @@ export default function TestimonialCard() {
   const isFirst = index === 0;
   const isLast = index === testimonials.length - 1;
 
-  const prev = () => setIndex((i) => Math.max(0, i - 1));
-  const next = () => setIndex((i) => Math.min(testimonials.length - 1, i + 1));
+  const prev = () => { if (isFirst) return; setIndex((i) => Math.max(0, i - 1)); };
+  const next = () => { if (isLast) return; setIndex((i) => Math.min(testimonials.length - 1, i + 1)); };
   const current = testimonials[index];
 
   const onTouchStart = (e: React.TouchEvent) => {
@@ -80,7 +80,7 @@ export default function TestimonialCard() {
             >
               <div className="flex gap-[8px] items-center w-full">
                 <span className="relative shrink-0 size-[40px] rounded-full overflow-hidden">
-                  <Image src={t.image} alt={t.name} fill quality={95} className="object-cover" />
+                  <Image src={t.image} alt={t.name} fill sizes="40px" quality={95} className="object-cover" />
                 </span>
                 <div className="flex flex-col items-start min-w-0 flex-1">
                   <p
@@ -111,7 +111,6 @@ export default function TestimonialCard() {
         <div className="flex justify-end gap-[8px] items-center mt-4">
           <button
             onClick={prev}
-            disabled={isFirst}
             aria-disabled={isFirst}
             aria-label="Previous testimonial"
             className={`flex items-center justify-center size-[44px] transition-opacity ${
@@ -129,7 +128,6 @@ export default function TestimonialCard() {
           </button>
           <button
             onClick={next}
-            disabled={isLast}
             aria-disabled={isLast}
             aria-label="Next testimonial"
             className={`flex items-center justify-center size-[44px] transition-opacity ${
@@ -160,7 +158,7 @@ export default function TestimonialCard() {
                 className="relative shrink-0 size-[48px] rounded-full border-[1.5px] overflow-hidden"
                 style={{ borderColor: "var(--rd-avatar-border)" }}
               >
-                <Image src={current.image} alt={current.name} fill quality={95} className="object-cover" />
+                <Image src={current.image} alt={current.name} fill sizes="48px" quality={95} className="object-cover" />
               </span>
               <div className="flex flex-col items-start">
                 <p
@@ -181,7 +179,6 @@ export default function TestimonialCard() {
             <div className="flex gap-[32px] items-start">
               <button
                 onClick={prev}
-                disabled={isFirst}
                 aria-disabled={isFirst}
                 aria-label="Previous testimonial"
                 className={`backdrop-blur-[4px] border flex items-center justify-center rounded-[28px] size-[48px] transition-opacity ${
@@ -195,7 +192,6 @@ export default function TestimonialCard() {
               </button>
               <button
                 onClick={next}
-                disabled={isLast}
                 aria-disabled={isLast}
                 aria-label="Next testimonial"
                 className={`backdrop-blur-[4px] border flex items-center justify-center rounded-[28px] size-[48px] transition-opacity ${
