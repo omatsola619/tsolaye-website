@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import CaseStudyNav from "@/components/work/CaseStudyNav";
+import BlockReveal from "@/components/work/BlockReveal";
 
 export const metadata: Metadata = {
   title: "Fitness AI: Case Study | Tsolaye",
@@ -47,11 +48,11 @@ export default function FitnessAICaseStudy() {
           <section className="flex flex-col gap-[48px] pb-[120px]">
             <div className="flex flex-col gap-[24px]">
               <Eyebrow>About project</Eyebrow>
-              <h1 className="font-normal text-[40px] md:text-[64px] lg:text-[76px] leading-[1.08] tracking-[-0.4px]">
+              <BlockReveal as="h1" trigger="load" className="font-normal text-[40px] md:text-[64px] lg:text-[76px] leading-[1.08] tracking-[-0.4px]">
                 <span className="text-[#0b0b0c]">Fitness AI is a calorie tracker that </span>
                 <span className="text-[#a3a3a8]">turns one photo of your plate </span>
                 <span className="text-[#0b0b0c]">into numbers people can trust.</span>
-              </h1>
+              </BlockReveal>
             </div>
 
             <div className="flex flex-wrap gap-x-[60px] gap-y-[24px]">
@@ -69,8 +70,9 @@ export default function FitnessAICaseStudy() {
                 src="/redesign/work/fitness-ai/about-hero.jpg"
                 alt="Fitness AI Today screen"
                 fill
+                priority
                 quality={95}
-                sizes="1160px"
+                sizes="(min-width:1280px) 1160px, 100vw"
                 className="object-cover"
               />
             </div>
@@ -95,10 +97,10 @@ export default function FitnessAICaseStudy() {
             <div className="flex flex-col md:flex-row gap-[40px]">
               <div className="flex-1">
                 <Eyebrow>The problem</Eyebrow>
-                <h2 className="font-normal text-[36px] md:text-[56px] lg:text-[72px] leading-[1.08] tracking-[-1.8px] mt-[12px]">
+                <BlockReveal as="h2" trigger="scroll" className="font-normal text-[36px] md:text-[56px] lg:text-[72px] leading-[1.08] tracking-[-1.8px] mt-[12px]">
                   <span className="text-[#0b0b0c]">Calorie tracking works. </span>
                   <span className="text-[#a3a3a8]">Most people just quit too early.</span>
-                </h2>
+                </BlockReveal>
               </div>
               <p className="flex-1 max-w-[640px] text-[22px] md:text-[26px] leading-[1.4] tracking-[-0.13px] text-[#5f5f66] md:pt-[40px]">
                 I started with one question: why do people give up? The same 3 answers kept
@@ -116,8 +118,9 @@ export default function FitnessAICaseStudy() {
                   <span className="relative size-[56px] md:size-[80px] rounded-full overflow-hidden shrink-0">
                     <Image
                       src="/redesign/work/fitness-ai/sofia-avatar.png"
-                      alt="Sofia Martinez"
+                      alt=""
                       fill
+                      sizes="80px"
                       className="object-cover"
                     />
                   </span>
@@ -193,12 +196,12 @@ export default function FitnessAICaseStudy() {
           <section className="flex flex-col gap-[40px] pb-[120px]">
             <div>
               <Eyebrow>Decision 1 · Fixes slow logging</Eyebrow>
-              <h2 className="font-normal text-[36px] md:text-[56px] lg:text-[72px] leading-[1.08] tracking-[-1.8px] mt-[12px]">
+              <BlockReveal as="h2" trigger="scroll" className="font-normal text-[36px] md:text-[56px] lg:text-[72px] leading-[1.08] tracking-[-1.8px] mt-[12px]">
                 <span className="text-[#0b0b0c]">Photo first, </span>
                 <span className="text-[#a3a3a8]">typing as the fallback.</span>
-              </h2>
+              </BlockReveal>
             </div>
-            <div className="w-screen relative left-1/2 -translate-x-1/2 px-5 lg:w-full lg:static lg:left-auto lg:translate-x-0 lg:px-0 overflow-x-auto">
+            <div tabIndex={0} role="region" aria-label="Photo-first logging flow: Snap, Read, Review, Log, See, scrollable" className="-mx-5 px-5 lg:mx-0 lg:w-full lg:px-0 overflow-x-auto">
               <Image
                 src="/redesign/work/fitness-ai/decision-01.jpg"
                 alt="Snap, Read, Review, Log, See flow"
@@ -215,10 +218,10 @@ export default function FitnessAICaseStudy() {
           <section className="flex flex-col gap-[40px] pb-[120px]">
             <div>
               <Eyebrow>Decision 2 · Fixes untrusted numbers</Eyebrow>
-              <h2 className="font-normal text-[36px] md:text-[56px] lg:text-[72px] leading-[1.08] tracking-[-1.8px] mt-[12px]">
+              <BlockReveal as="h2" trigger="scroll" className="font-normal text-[36px] md:text-[56px] lg:text-[72px] leading-[1.08] tracking-[-1.8px] mt-[12px]">
                 <span className="text-[#0b0b0c]">AI is only useful </span>
                 <span className="text-[#a3a3a8]">when people can check its work.</span>
-              </h2>
+              </BlockReveal>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px]">
@@ -252,7 +255,7 @@ export default function FitnessAICaseStudy() {
               ingredients sit below it.
             </p>
 
-            <div className="w-screen relative left-1/2 -translate-x-1/2 px-5 flex lg:justify-center lg:w-full lg:static lg:left-auto lg:translate-x-0 lg:px-0 overflow-x-auto">
+            <div tabIndex={0} role="region" aria-label="Reading your plate and Nutrition facts screens, scrollable" className="-mx-5 px-5 lg:mx-0 flex lg:justify-center lg:w-full lg:px-0 overflow-x-auto">
               <Image
                 src="/redesign/work/fitness-ai/decision-02.jpg"
                 alt="Reading your plate and Nutrition facts screens"
@@ -273,7 +276,7 @@ export default function FitnessAICaseStudy() {
                 10 questions, about 2 minutes, one personal plan.
               </h2>
             </div>
-            <div className="w-screen relative left-1/2 -translate-x-1/2 px-5 lg:w-full lg:static lg:left-auto lg:translate-x-0 lg:px-0 overflow-x-auto">
+            <div tabIndex={0} role="region" aria-label="Onboarding flow screens, scrollable" className="-mx-5 px-5 lg:mx-0 lg:w-full lg:px-0 overflow-x-auto">
               <Image
                 src="/redesign/work/fitness-ai/start-2-min.jpg"
                 alt="Onboarding flow: plan intro, goal, projection, plan ready"
@@ -294,7 +297,7 @@ export default function FitnessAICaseStudy() {
                 6 ways to log, one sheet to choose from.
               </h2>
             </div>
-            <div className="w-screen relative left-1/2 -translate-x-1/2 px-5 lg:w-full lg:static lg:left-auto lg:translate-x-0 lg:px-0 overflow-x-auto">
+            <div tabIndex={0} role="region" aria-label="Log food sheet screens, scrollable" className="-mx-5 px-5 lg:mx-0 lg:w-full lg:px-0 overflow-x-auto">
               <Image
                 src="/redesign/work/fitness-ai/log-a-meal.jpg"
                 alt="Log food sheet: scan, barcode, search, portions"
@@ -315,7 +318,7 @@ export default function FitnessAICaseStudy() {
                 3 tabs, 3 questions people ask every day.
               </h2>
             </div>
-            <div className="w-screen relative left-1/2 -translate-x-1/2 px-5 lg:w-full lg:static lg:left-auto lg:translate-x-0 lg:px-0 overflow-x-auto">
+            <div tabIndex={0} role="region" aria-label="Today, Diary and Progress tab screens, scrollable" className="-mx-5 px-5 lg:mx-0 lg:w-full lg:px-0 overflow-x-auto">
               <Image
                 src="/redesign/work/fitness-ai/track-your-day.jpg"
                 alt="Today, Diary and Progress tabs"
@@ -332,9 +335,9 @@ export default function FitnessAICaseStudy() {
           <section className="flex flex-col gap-[48px] pb-[160px]">
             <div>
               <Eyebrow>Results</Eyebrow>
-              <h2 className="font-normal text-[36px] md:text-[56px] lg:text-[72px] leading-[1.08] tracking-[-1.8px] mt-[12px] text-[#0b0b0c]">
+              <BlockReveal as="h2" trigger="scroll" className="font-normal text-[36px] md:text-[56px] lg:text-[72px] leading-[1.08] tracking-[-1.8px] mt-[12px] text-[#0b0b0c]">
                 Logging became something you do between bites.
-              </h2>
+              </BlockReveal>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-[560fr_600fr] gap-[40px] items-start">

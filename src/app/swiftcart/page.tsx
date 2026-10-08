@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import CaseStudyNav from "@/components/work/CaseStudyNav";
+import BlockReveal from "@/components/work/BlockReveal";
 
 export const metadata: Metadata = {
   title: "SwiftCart: Case Study | Tsolaye",
@@ -48,21 +49,32 @@ function Heading({
   line1Class = "text-[#16171a]",
   line2Class = "text-[#8a8d93]",
   className = "",
+  reveal = false,
+  dark = false,
 }: {
   line1: string;
   line2: string;
   line1Class?: string;
   line2Class?: string;
   className?: string;
+  reveal?: boolean;
+  dark?: boolean;
 }) {
-  return (
-    <h2
-      className={`font-light text-[32px] sm:text-[40px] md:text-[52px] xl:text-[64px] leading-[1.08] tracking-[-0.48px] max-w-[1160px] ${className}`}
-    >
+  const headingClass = `font-light text-[32px] sm:text-[40px] md:text-[52px] xl:text-[64px] leading-[1.08] tracking-[-0.48px] max-w-[1160px] ${className}`;
+  const lines = (
+    <>
       <span className={`block ${line1Class}`}>{line1}</span>
       <span className={`block ${line2Class}`}>{line2}</span>
-    </h2>
+    </>
   );
+  if (reveal) {
+    return (
+      <BlockReveal as="h2" trigger="scroll" tone={dark ? "dark" : "light"} className={headingClass}>
+        {lines}
+      </BlockReveal>
+    );
+  }
+  return <h2 className={headingClass}>{lines}</h2>;
 }
 
 function Glow({
@@ -227,10 +239,10 @@ function CaptionBody({ children }: { children: React.ReactNode }) {
 function Pill({ children }: { children: React.ReactNode }) {
   return (
     <div
-      className={`${GLASS} !rounded-[24px] bg-white/50 absolute -top-[26px] left-1/2 -translate-x-1/2 z-10 h-[52px] px-[18px] flex items-center gap-[10px] whitespace-nowrap`}
+      className={`${GLASS} !rounded-[24px] bg-white/50 absolute -top-[26px] left-1/2 -translate-x-1/2 z-10 min-h-[52px] py-[6px] px-[14px] sm:px-[18px] w-max max-w-full sm:max-w-none sm:py-0 flex items-center gap-[8px] sm:gap-[10px] sm:whitespace-nowrap`}
     >
       <span className="size-[10px] rounded-full bg-[#ff7a00] shrink-0" />
-      <span className="font-semibold text-[#16171a] text-[17px] xl:text-[20px] leading-[1.45]">{children}</span>
+      <span className="font-semibold text-[#16171a] text-[14px] sm:text-[17px] xl:text-[20px] leading-[1.3] sm:leading-[1.45] text-center sm:text-left">{children}</span>
     </div>
   );
 }
@@ -269,10 +281,14 @@ export default function SwiftCartCaseStudy() {
             <Label className="text-[#8a8d93] xl:tracking-[2.4px]">{"// 2026"}</Label>
           </div>
 
-          <h1 className="font-light text-[52px] sm:text-[72px] md:text-[96px] lg:text-[112px] xl:text-[128px] leading-none tracking-[-0.64px] mt-[40px] md:mt-[64px] xl:mt-[83px]">
+          <BlockReveal
+            as="h1"
+            trigger="load"
+            className="font-light text-[52px] sm:text-[72px] md:text-[96px] lg:text-[112px] xl:text-[128px] leading-none tracking-[-0.64px] mt-[40px] md:mt-[64px] xl:mt-[83px]"
+          >
             <span className="block text-[#16171a]">Shop by voice.</span>
             <span className="block text-[#8a8d93]">Pay one honest total.</span>
-          </h1>
+          </BlockReveal>
 
           <div className="mt-[48px] md:mt-[72px] xl:mt-[88px] grid grid-cols-1 lg:grid-cols-[620fr_460fr] gap-[40px] lg:gap-[80px] items-start">
             <p className="font-medium text-[#16171a] text-[20px] md:text-[24px] xl:text-[26px] leading-[1.48] max-w-[620px]">
@@ -296,6 +312,7 @@ export default function SwiftCartCaseStudy() {
           <div className="relative">
             <Label>{"// 02  THE PROBLEM"}</Label>
             <Heading
+              reveal
               className="mt-[24px] md:mt-[31px]"
               line1="People already knew what they wanted."
               line2="The app made them type it, then changed the price at the end."
@@ -380,6 +397,7 @@ export default function SwiftCartCaseStudy() {
           <div className="relative">
             <Label>{"// 05  KEY DECISION 01"}</Label>
             <Heading
+              reveal
               className="mt-[24px] md:mt-[31px]"
               line1="Voice had to feel like part of shopping,"
               line2="not a separate app."
@@ -451,7 +469,7 @@ export default function SwiftCartCaseStudy() {
                 style={{ top: "-27px" }}
               />
               <Glow w={520} h={400} color="#ff7a00" opacity={0.3} blur={80} className="hidden xl:block left-1/2 -translate-x-1/2 top-[53px]" />
-              <div className="relative -mx-5 px-5 md:mx-0 md:px-0 flex md:grid md:grid-cols-3 gap-[20px] md:gap-[24px] xl:gap-[70px] overflow-x-auto md:overflow-visible snap-x snap-mandatory md:justify-items-center xl:flex xl:justify-center">
+              <div tabIndex={0} role="region" aria-label="Voice flow screens" className="relative -mx-5 px-5 md:mx-0 md:px-0 flex md:grid md:grid-cols-3 gap-[20px] md:gap-[24px] xl:gap-[70px] overflow-x-auto md:overflow-visible snap-x snap-mandatory md:justify-items-center xl:flex xl:justify-center">
                 <div className="snap-center shrink-0 w-[240px] md:w-full md:max-w-[290px] xl:w-[290px]">
                   <Phone290 src="voice-permission.png" alt="Voice permission sheet explaining why the mic is needed before it opens" />
                   <div className="mt-[28px] xl:mt-[34px] px-[8px]">
@@ -478,14 +496,14 @@ export default function SwiftCartCaseStudy() {
 
             {/* Before and after */}
             <div className={`${GLASS} mt-[56px] md:mt-[80px] p-[24px] md:p-[36px] flex flex-col md:flex-row md:items-center gap-[28px] md:gap-[40px]`}>
-              <div className="flex items-center gap-[24px] xl:gap-[28px] shrink-0">
+              <div className="flex items-center gap-[12px] min-[420px]:gap-[24px] xl:gap-[28px] shrink-0">
                 <Phone
                   src="wireframe.png"
                   alt="First wireframe with the voice button in the tab bar"
                   imgW={140}
                   imgH={231}
                   sizes="140px"
-                  className="w-[110px] md:w-[140px]"
+                  className="w-[84px] min-[420px]:w-[110px] md:w-[140px]"
                 />
                 <span className="font-light text-[#ff7a00] text-[32px] leading-none">→</span>
                 <Phone
@@ -494,7 +512,7 @@ export default function SwiftCartCaseStudy() {
                   imgW={122}
                   imgH={246}
                   sizes="122px"
-                  className="w-[96px] md:w-[122px]"
+                  className="w-[74px] min-[420px]:w-[96px] md:w-[122px]"
                 />
               </div>
               <div className="flex flex-col gap-[20px] md:gap-[30px] xl:pl-[16px]">
@@ -512,6 +530,7 @@ export default function SwiftCartCaseStudy() {
         <section className={`relative overflow-hidden bg-[#e4e4e6] ${PAD} pt-[64px] md:pt-[96px] xl:pt-[120px]`}>
           <Label>{"// 07  KEY DECISION 02"}</Label>
           <Heading
+            reveal
             className="mt-[24px] md:mt-[31px]"
             line1="One honest total,"
             line2="from checkout to the receipt."
@@ -631,7 +650,7 @@ export default function SwiftCartCaseStudy() {
 
             {/* Results + product */}
             <div className="mt-[64px] md:mt-[96px] xl:mt-[140px] grid grid-cols-1 md:grid-cols-2 xl:flex xl:gap-[40px] gap-x-[32px] gap-y-[56px]">
-              <div className="flex flex-col md:flex-row md:items-start xl:contents gap-[24px]">
+              <div className="flex flex-col min-w-0 xl:contents gap-[24px]">
                 <div className="w-full max-w-[300px] mx-auto md:mx-0 xl:w-[300px] shrink-0">
                   <Phone
                     src="discover-results.png"
@@ -641,14 +660,14 @@ export default function SwiftCartCaseStudy() {
                     sizes="(min-width: 1280px) 300px, 70vw"
                   />
                 </div>
-                <div className="xl:w-[220px] shrink-0 xl:mt-[211px]">
+                <div className="min-w-0 xl:w-[220px] xl:shrink-0 xl:mt-[211px]">
                   <Label className="text-[#cc4e00]">{"// VOICE RESULTS"}</Label>
                   <p className="font-medium text-[#16171a] text-[20px] xl:text-[24px] leading-[1.45] mt-[16px] max-w-[320px]">
                     What you said stays at the top. Every result adds in one tap.
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row md:items-start xl:contents gap-[24px]">
+              <div className="flex flex-col min-w-0 xl:contents gap-[24px]">
                 <div className="w-full max-w-[300px] mx-auto md:mx-0 xl:w-[300px] shrink-0">
                   <Phone
                     src="discover-product.png"
@@ -658,7 +677,7 @@ export default function SwiftCartCaseStudy() {
                     sizes="(min-width: 1280px) 300px, 70vw"
                   />
                 </div>
-                <div className="xl:w-[220px] shrink-0 xl:mt-[211px]">
+                <div className="min-w-0 xl:w-[220px] xl:shrink-0 xl:mt-[211px]">
                   <Label className="text-[#cc4e00]">{"// PRODUCT"}</Label>
                   <p className="font-medium text-[#16171a] text-[20px] xl:text-[24px] leading-[1.45] mt-[16px] max-w-[320px]">
                     Price, arrival date and returns are clear before you commit.
@@ -703,7 +722,7 @@ export default function SwiftCartCaseStudy() {
                     Mateo R. is on the way
                   </p>
                   <span className="size-[44px] shrink-0 rounded-full bg-white/70 flex items-center justify-center">
-                    <Image src={`${ASSETS}/icon-phone.svg`} alt="Call courier" width={22} height={22} />
+                    <Image src={`${ASSETS}/icon-phone.svg`} alt="" aria-hidden width={22} height={22} />
                   </span>
                 </div>
 
@@ -843,6 +862,7 @@ export default function SwiftCartCaseStudy() {
           <div className="relative">
             <Label className="text-white/60">{"// 11  OUTCOME AND LOOKING BACK"}</Label>
             <Heading
+              reveal dark
               className="mt-[24px] md:mt-[31px]"
               line1="What we delivered,"
               line2="and what I would change."

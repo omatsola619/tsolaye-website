@@ -14,8 +14,12 @@
   --font-display: var(--font-happy-go);
 }
 
+html {
+  background-color: var(--rd-bg);
+}
+
 body {
-  background: var(--background);
+  background: var(--rd-bg);
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
@@ -37,6 +41,25 @@ body {
   .animate-logo-marquee {
     animation: none;
   }
+}
+
+/* Block-reveal heading animation (case studies). The case study pages are always
+   light, so these do not follow the site's light/dark switch. Override
+   --reveal-ink / --reveal-lead per section if needed. */
+:root {
+  --reveal-ink: #0b0b0c;
+  --reveal-lead: #6b6e75;
+  --reveal-ink-on-dark: #f3f4f2;
+}
+
+[data-reveal-tone="dark"] {
+  --reveal-ink: var(--reveal-ink-on-dark);
+}
+
+/* Hide reveal headings until their animation starts, only when JS is running.
+   Without JS they stay visible. */
+html.js [data-reveal]:not([data-reveal-state]) {
+  visibility: hidden;
 }
 
 /* Redesign (Home/About/Design Engineering) light+dark theme tokens */

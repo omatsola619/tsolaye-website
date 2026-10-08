@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import CaseStudyNav from "@/components/work/CaseStudyNav";
+import BlockReveal from "@/components/work/BlockReveal";
 
 // The Figma frame is set in Inter. layout.tsx only loads 400-900, so load 300 (Light) too.
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600"], display: "swap" });
@@ -36,7 +37,7 @@ function Chip({
   return (
     <span
       className={`inline-flex items-center rounded-full px-[14px] py-[8px] md:px-[18px] md:py-[10px] text-[16px] md:text-[20px] leading-[1.3] tracking-[-0.1px] font-medium ${
-        pre ? "whitespace-pre" : "whitespace-nowrap"
+        pre ? "whitespace-pre-wrap md:whitespace-pre max-w-full" : "whitespace-nowrap"
       } ${className}`}
     >
       {children}
@@ -58,7 +59,7 @@ function DotChip({
   return (
     <span
       className={`inline-flex items-center gap-[10px] rounded-full px-[14px] py-[8px] md:px-[18px] md:py-[10px] text-[16px] md:text-[20px] leading-[1.3] tracking-[-0.1px] font-medium ${
-        pre ? "whitespace-pre" : "whitespace-nowrap"
+        pre ? "whitespace-pre-wrap md:whitespace-pre max-w-full" : "whitespace-nowrap"
       } ${className}`}
     >
       <span aria-hidden className={`size-[8px] shrink-0 rounded-full ${dot}`} />
@@ -110,6 +111,7 @@ function SectionHeader({
   headline,
   paragraph,
   extra,
+  reveal = false,
 }: {
   tone?: Tone;
   label: React.ReactNode;
@@ -117,8 +119,16 @@ function SectionHeader({
   headline: [string, string];
   paragraph: string;
   extra?: React.ReactNode;
+  reveal?: boolean;
 }) {
   const dark = tone === "dark";
+  const headingClass = "font-normal text-[40px] sm:text-[52px] lg:text-[64px] leading-[1.06] tracking-[-0.56px]";
+  const headlineLines = (
+    <>
+      <span className={`block ${dark ? "text-white" : "text-[#111716]"}`}>{headline[0]}</span>
+      <span className={`block ${dark ? "text-[#7e9c98]" : "text-[#98a2a0]"}`}>{headline[1]}</span>
+    </>
+  );
   return (
     <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] lg:grid-cols-[317px_1fr] gap-x-[24px] gap-y-[20px]">
       <div>
@@ -130,10 +140,13 @@ function SectionHeader({
         </p>
       </div>
       <div>
-        <h2 className="font-normal text-[40px] sm:text-[52px] lg:text-[64px] leading-[1.06] tracking-[-0.56px]">
-          <span className={`block ${dark ? "text-white" : "text-[#111716]"}`}>{headline[0]}</span>
-          <span className={`block ${dark ? "text-[#7e9c98]" : "text-[#98a2a0]"}`}>{headline[1]}</span>
-        </h2>
+        {reveal ? (
+          <BlockReveal as="h2" trigger="scroll" tone={dark ? "dark" : "light"} className={headingClass}>
+            {headlineLines}
+          </BlockReveal>
+        ) : (
+          <h2 className={headingClass}>{headlineLines}</h2>
+        )}
         <p
           className={`mt-[24px] lg:mt-[28px] max-w-[620px] text-[20px] md:text-[24px] leading-[1.5] tracking-[-0.12px] ${
             dark ? "text-[#a9bdba]" : "text-[#5f6b69]"
@@ -220,8 +233,9 @@ function Glow({ className = "" }: { className?: string }) {
 
 export default function PockitCaseStudy() {
   return (
-    <div className={`bg-[#f3f4f2] min-h-screen overflow-x-clip ${inter.className}`}>
+    <>
       <CaseStudyNav />
+      <main className={`bg-[#f3f4f2] min-h-screen overflow-x-clip ${inter.className}`}>
 
       {/* 01 Hero */}
       <section className="bg-[#f3f4f2]">
@@ -239,8 +253,8 @@ export default function PockitCaseStudy() {
           <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[rgba(7,25,23,0.8)] via-[rgba(7,25,23,0)_55%] to-[rgba(7,25,23,0)]" />
 
           <Container className="relative h-full flex flex-col justify-between py-[28px] lg:pt-[64px] lg:pb-[100px]">
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-[8px] text-white">
+            <div className="flex items-start sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-[8px] text-white shrink-0">
                 <Image
                   src={`${IMG}/pockit-logo-mark.svg`}
                   alt=""
@@ -250,7 +264,7 @@ export default function PockitCaseStudy() {
                 />
                 <span className="text-[18px] lg:text-[24px] leading-none tracking-[-0.24px]">POCkit</span>
               </div>
-              <div className="flex gap-[6px] lg:gap-[10px]">
+              <div className="flex flex-wrap justify-end gap-[6px] lg:gap-[10px]">
                 {["Fintech", "iOS app", "2026"].map((c) => (
                   <Chip key={c} className="bg-white/[0.12] border border-white/25 text-white !px-[12px] !py-[6px] lg:!px-[18px] lg:!py-[10px] !text-[13px] lg:!text-[20px]">
                     {c}
@@ -266,12 +280,17 @@ export default function PockitCaseStudy() {
                   “Can I afford new headphones for ₦8,000?”
                 </p>
               </div>
-              <h1 className="font-normal text-[48px] sm:text-[76px] lg:text-[104px] leading-none tracking-[-0.64px] text-white">
+              <BlockReveal
+                as="h1"
+                trigger="load"
+                tone="dark"
+                className="font-normal text-[48px] sm:text-[76px] lg:text-[104px] leading-none tracking-[-0.64px] text-white"
+              >
                 <span className="block">Spend with</span>
                 <span className="block">
                   confidence, <span className="text-white/55">not guilt.</span>
                 </span>
-              </h1>
+              </BlockReveal>
             </div>
           </Container>
         </div>
@@ -331,6 +350,7 @@ export default function PockitCaseStudy() {
       <section className="bg-[#f3f4f2]">
         <Container className="py-[72px] lg:py-[148px]">
           <SectionHeader
+            reveal
             label="The problem"
             index="02 / 15"
             headline={["People have the data.", "They lack the guidance."]}
@@ -486,7 +506,7 @@ export default function PockitCaseStudy() {
                 alt="Pockit home screen with total monthly income, create budget and log expense actions"
                 width={333}
                 height={578}
-                sizes="240px"
+                sizes="334px"
                 className="w-[200px] md:w-[240px] shrink-0 self-start md:self-center"
               />
               <div aria-hidden className="hidden md:block h-px w-[44px] bg-[#98a2a0]/70 shrink-0 ml-[16px]" />
@@ -521,6 +541,7 @@ export default function PockitCaseStudy() {
         <Glow className="left-1/2 -translate-x-1/2 top-[30%] w-[min(1500px,160vw)] h-[900px]" />
         <Container className="relative py-[72px] lg:py-[148px]">
           <SectionHeader
+            reveal
             tone="dark"
             label="Key decision 02"
             index="10 / 15"
@@ -547,7 +568,7 @@ export default function PockitCaseStudy() {
                   alt={p.alt}
                   width={389}
                   height={674}
-                  sizes="(min-width: 1024px) 280px, 240px"
+                  sizes="(min-width: 1024px) 389px, 334px"
                   className="w-[240px] lg:w-[280px] max-w-[70%] md:max-w-full"
                 />
                 <div className="mt-[28px] lg:mt-[36px]">
@@ -651,7 +672,7 @@ export default function PockitCaseStudy() {
                     alt={p.alt}
                     width={p.w}
                     height={p.h}
-                    sizes="200px"
+                    sizes="278px"
                     className="w-[200px] max-w-[70%] sm:max-w-full"
                   />
                   <div className="mt-[28px]">
@@ -683,22 +704,22 @@ export default function PockitCaseStudy() {
                   </DotChip>
                 </div>
               </div>
-              <div className="flex items-end justify-center gap-[24px] lg:gap-[40px] lg:pr-[20px] lg:pt-0">
+              <div className="flex items-end justify-center gap-[24px] lg:gap-[24px] min-[1200px]:gap-[40px] lg:pr-0 min-[1200px]:pr-[20px] lg:pt-0">
                 <Phone
                   src="phone-first-budget.png"
                   alt="Bank Account Insights screen with a suggested monthly budget by category"
                   width={347}
                   height={601}
-                  sizes="250px"
-                  className="w-[44%] max-w-[250px] lg:w-[250px]"
+                  sizes="348px"
+                  className="w-[44%] max-w-[250px] lg:w-[190px] min-[1200px]:w-[250px]"
                 />
                 <Phone
                   src="phone-income-accounts.png"
                   alt="Income screen listing linked bank accounts and manual income totalling ₦60,000"
                   width={347}
                   height={601}
-                  sizes="250px"
-                  className="w-[44%] max-w-[250px] lg:w-[250px]"
+                  sizes="348px"
+                  className="w-[44%] max-w-[250px] lg:w-[190px] min-[1200px]:w-[250px]"
                 />
               </div>
             </div>
@@ -738,9 +759,9 @@ export default function PockitCaseStudy() {
                 </div>
               </div>
               <div className="mt-[32px] grid grid-cols-1 sm:grid-cols-3 gap-x-[8px] gap-y-[32px] items-end justify-items-center">
-                <Phone src="phone-budgets.png" alt="My Budgets screen with category limits and progress bars" width={347} height={602} sizes="250px" className="w-[220px] sm:w-full max-w-[250px]" />
-                <Phone src="phone-home.png" alt="Pockit home screen with total monthly income and active budgets" width={416} height={722} sizes="300px" className="w-[260px] sm:w-full max-w-[300px]" />
-                <Phone src="phone-reminders.png" alt="Reminders screen with upcoming bills and an AI insight" width={347} height={602} sizes="250px" className="w-[220px] sm:w-full max-w-[250px]" />
+                <Phone src="phone-budgets.png" alt="My Budgets screen with category limits and progress bars" width={347} height={602} sizes="348px" className="w-[220px] sm:w-full max-w-[250px]" />
+                <Phone src="phone-home.png" alt="Pockit home screen with total monthly income and active budgets" width={416} height={722} sizes="417px" className="w-[260px] sm:w-full max-w-[300px]" />
+                <Phone src="phone-reminders.png" alt="Reminders screen with upcoming bills and an AI insight" width={347} height={602} sizes="348px" className="w-[220px] sm:w-full max-w-[250px]" />
               </div>
               <div className="mt-[28px] flex justify-end">
                 <FoodCard suffix="" className="w-[236px] max-w-full" />
@@ -753,9 +774,9 @@ export default function PockitCaseStudy() {
                 <p className="font-medium text-[20px] leading-[1.5] tracking-[-0.1px] text-[#5f6b69] whitespace-nowrap">Safe to spend today</p>
                 <p className="mt-[4px] font-semibold text-[40px] leading-[1.1] tracking-[-0.8px] text-[#0f766e]">₦1,200</p>
               </div>
-              <Phone src="phone-budgets.png" alt="My Budgets screen with category limits and progress bars" width={347} height={602} sizes="250px" className="absolute left-[12.07%] top-[24.09%] w-[21.55%]" />
-              <Phone src="phone-home.png" alt="Pockit home screen with total monthly income and active budgets" width={416} height={722} sizes="300px" className="absolute left-[37.07%] top-[13.9%] w-[25.86%]" />
-              <Phone src="phone-reminders.png" alt="Reminders screen with upcoming bills and an AI insight" width={347} height={602} sizes="250px" className="absolute left-[66.38%] top-[24.09%] w-[21.55%]" />
+              <Phone src="phone-budgets.png" alt="My Budgets screen with category limits and progress bars" width={347} height={602} sizes="348px" className="absolute left-[12.07%] top-[24.09%] w-[21.55%]" />
+              <Phone src="phone-home.png" alt="Pockit home screen with total monthly income and active budgets" width={416} height={722} sizes="417px" className="absolute left-[37.07%] top-[13.9%] w-[25.86%]" />
+              <Phone src="phone-reminders.png" alt="Reminders screen with upcoming bills and an AI insight" width={347} height={602} sizes="348px" className="absolute left-[66.38%] top-[24.09%] w-[21.55%]" />
               <FoodCard suffix="" className="absolute left-[76.2%] top-[78.1%] w-[236px]" />
             </div>
           </div>
@@ -802,7 +823,7 @@ export default function PockitCaseStudy() {
                   alt={p.alt}
                   width={375}
                   height={650}
-                  sizes="(min-width: 1024px) 270px, 240px"
+                  sizes="(min-width: 1024px) 375px, 334px"
                   className="w-[240px] lg:w-[270px] max-w-[70%] md:max-w-full"
                 />
                 <div className="mt-[28px] lg:mt-[36px]">
@@ -831,6 +852,7 @@ export default function PockitCaseStudy() {
       <section className="bg-[#f3f4f2]">
         <Container className="py-[72px] lg:py-[148px]">
           <SectionHeader
+            reveal
             label="Testing and outcome"
             index="15 / 15"
             headline={["Designed to make", "money feel human."]}
@@ -933,6 +955,7 @@ export default function PockitCaseStudy() {
           <span aria-hidden>→</span>
         </a>
       </section>
-    </div>
+      </main>
+    </>
   );
 }

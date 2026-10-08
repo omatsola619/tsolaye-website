@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import { Nunito_Sans, Newsreader } from "next/font/google";
 import CaseStudyNav from "@/components/work/CaseStudyNav";
+import BlockReveal from "@/components/work/BlockReveal";
 
 const nunito = Nunito_Sans({
   subsets: ["latin"],
@@ -94,7 +95,7 @@ function Tag({
   variant?: "default" | "muted" | "dark";
 }) {
   const base =
-    "inline-flex items-center gap-[10px] rounded-full border px-5 py-[9px] text-[16px] md:text-[20px] leading-[1.3] whitespace-pre";
+    "inline-flex items-center gap-[10px] rounded-full border px-5 py-[9px] text-[16px] md:text-[20px] leading-[1.3] whitespace-normal text-center min-[1400px]:whitespace-pre";
   const look =
     variant === "dark"
       ? "bg-[#00308c] border-[#00308c] text-white"
@@ -153,6 +154,7 @@ function SectionHead({
   paraY,
   paraW = 440,
   paraX = 880,
+  reveal = false,
 }: {
   tag: string;
   line1: React.ReactNode;
@@ -161,17 +163,29 @@ function SectionHead({
   paraY: number;
   paraW?: number;
   paraX?: number;
+  reveal?: boolean;
 }) {
+  const headingClass =
+    "font-light text-[#5a6380] text-[40px] md:text-[52px] min-[1400px]:text-[60px] leading-[1.12] tracking-[-1.2px] min-[1400px]:whitespace-nowrap";
+  const lines = (
+    <>
+      <span className="block">{line1}</span>
+      <span className="block">{line2}</span>
+    </>
+  );
   return (
     <>
       <Abs x={80} y={140}>
         <Tag>{tag}</Tag>
       </Abs>
       <Abs x={77} y={238}>
-        <h2 className="font-light text-[#5a6380] text-[40px] md:text-[52px] min-[1400px]:text-[60px] leading-[1.12] tracking-[-1.2px] min-[1400px]:whitespace-nowrap">
-          <span className="block">{line1}</span>
-          <span className="block">{line2}</span>
-        </h2>
+        {reveal ? (
+          <BlockReveal as="h2" trigger="scroll" className={headingClass}>
+            {lines}
+          </BlockReveal>
+        ) : (
+          <h2 className={headingClass}>{lines}</h2>
+        )}
       </Abs>
       <Abs x={paraX} y={paraY} w={paraW}>
         <Body>{para}</Body>
@@ -282,7 +296,7 @@ function Fig({
         />
       </div>
       <div
-        className="min-[1400px]:absolute min-[1400px]:left-1/2 min-[1400px]:-translate-x-1/2 min-[1400px]:top-[calc(var(--nh)+28px)] min-[1400px]:whitespace-nowrap"
+        className="min-[1400px]:absolute min-[1400px]:left-1/2 min-[1400px]:-translate-x-1/2 max-w-full min-[1400px]:top-[calc(var(--nh)+28px)] min-[1400px]:whitespace-nowrap"
         style={{ "--nh": `${nh}px` } as Vars}
       >
         <Tag dot={dot}>{caption}</Tag>
@@ -448,12 +462,16 @@ export default function PillPalCaseStudy() {
         {/* 01 Hero */}
         <Frame h={1590}>
           <Abs x={200} y={140} w={1000} className="text-center">
-            <h1 className="font-light text-[#5a6380] text-[40px] md:text-[56px] min-[1400px]:text-[68px] leading-[1.1] tracking-[-1.36px]">
+            <BlockReveal
+              as="h1"
+              trigger="load"
+              className="font-light text-[#5a6380] text-[40px] md:text-[56px] min-[1400px]:text-[68px] leading-[1.1] tracking-[-1.36px]"
+            >
               <span className="block">Pill Pal Simplifies</span>
               <span className="block">
                 <Serif className="text-[1.0735em] tracking-[-0.02em]">Every Daily Dose.</Serif>
               </span>
-            </h1>
+            </BlockReveal>
           </Abs>
           <Abs x={390} y={331} w={620} className="text-center">
             <Body className="text-[18px] md:text-[24px]">
@@ -537,6 +555,7 @@ export default function PillPalCaseStudy() {
         {/* 03 Problem to solution */}
         <Frame h={1525}>
           <SectionHead
+            reveal
             tag="Problem and Solution"
             line1="Turning Missed Doses"
             line2={
@@ -700,6 +719,7 @@ export default function PillPalCaseStudy() {
         {/* 08 Decision · Reminders */}
         <Frame h={2377}>
           <SectionHead
+            reveal
             tag="Key Decision 01"
             line1="Reminders That"
             line2={<Italic>Wait for You.</Italic>}
@@ -821,6 +841,7 @@ export default function PillPalCaseStudy() {
         {/* 09 Decision · Accessibility */}
         <Frame h={1624}>
           <SectionHead
+            reveal
             tag="Key Decision 02"
             line1="One App,"
             line2={<Italic>Every Ability.</Italic>}
@@ -1050,6 +1071,7 @@ export default function PillPalCaseStudy() {
         {/* 13 Testing and takeaways */}
         <Frame h={1757}>
           <SectionHead
+            reveal
             tag="Testing and Takeaways"
             line1="Testing for a"
             line2={<Italic>Calmer Daily Routine.</Italic>}
@@ -1073,7 +1095,7 @@ export default function PillPalCaseStudy() {
             <div className="relative size-full bg-white border border-[#eceef2] rounded-[24px] shadow-[0_12px_16px_rgba(10,26,51,0.04)] p-[24px] md:p-[39px] overflow-hidden">
               <span
                 aria-hidden
-                className="absolute right-[24px] md:right-[60px] top-[7px] font-bold text-[#e6e9f0] text-[100px] md:text-[160px] leading-none tracking-[-3.2px]"
+                className="absolute right-[24px] md:right-[60px] top-[7px] font-bold text-[#e6e9f0] text-[64px] md:text-[100px] min-[1400px]:text-[160px] leading-none tracking-[-3.2px]"
               >
                 “
               </span>
