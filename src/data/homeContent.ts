@@ -35,6 +35,20 @@ export const selectedWork: SelectedWorkItem[] = [
     cardBg: "#f7f7f7",
   },
   {
+    title: "Hollis: the plan before the paperwork",
+    statusLabel: "Case study",
+    statusBg: "#edede8",
+    statusText: "#4d4a45",
+    context: "Product Designer · Fintech · iOS and web · 2026",
+    description:
+      "In testing, 6 of 8 people reached their monthly plan without help, and only 2 of 8 stopped at the SSN step, down from 4 of 6 in the investing apps they already used.",
+    image: "/redesign/projects/hollis.jpg",
+    imageFit: "cover",
+    tags: ["Onboarding", "Fintech", "iOS and web"],
+    href: "/hollis",
+    cardBg: "#f1f1f1",
+  },
+  {
     title: "Pill Pal: never miss a dose",
     statusLabel: "Case study",
     statusBg: "#edede8",
@@ -49,32 +63,17 @@ export const selectedWork: SelectedWorkItem[] = [
     cardBg: "#f1f1f1",
   },
   {
-    title: "Swiftcart: search that finds the right product",
+    title: "Culture Scape: cultures without a flight",
     statusLabel: "Case study",
     statusBg: "#edede8",
     statusText: "#4d4a45",
-    context: "Product Designer · E-commerce · iOS",
+    context: "Product Designer · Cultural travel · Website",
     description:
-      "Voice search got the first item into the cart about 2x faster, and 6 of 8 testers completed checkout end to end, for a 4.2/5 average ease rating.",
-    image: "/redesign/projects/swiftcart.jpg",
+      "CultureScape offers immersive journeys into global traditions, rituals, food, fashion, and stories, giving you a unique way to experience cultures without booking a flight.",
+    image: "/redesign/projects/culturescape.jpg",
     imageFit: "cover",
-    imagePosition: "55% top",
-    tags: ["AI search", "E-commerce", "Trust"],
-    href: "/swiftcart",
-    cardBg: "#f1f1f1",
-  },
-  {
-    title: "Pockit: a calmer way to budget",
-    statusLabel: "Case study",
-    statusBg: "#edede8",
-    statusText: "#4d4a45",
-    context: "Product Designer · Finance · 2026",
-    description:
-      "In moderated testing, 4 of 5 people set up a first budget unaided, 4 of 5 found today's safe-to-spend number without help, and 5 of 5 logged an expense by voice.",
-    image: "/redesign/projects/pockit.jpg",
-    imageFit: "cover",
-    tags: ["0→1 product", "Budgeting", "Voice input"],
-    href: "/pockit",
+    tags: ["Web Design", "UX/UI", "Components"],
+    href: "https://www.behance.net/gallery/240623047/Culture-Scape",
     cardBg: "#f7f7f7",
   },
 ];
@@ -89,10 +88,16 @@ export type MoreCaseStudyItem = {
 // Home's "More case studies" — condensed rows below the 4 flagship cards.
 export const moreCaseStudies: MoreCaseStudyItem[] = [
   {
-    title: "Culture Scape",
-    tagline: "Cultural travel · Website",
-    image: "/redesign/projects/culturescape.jpg",
-    href: "https://www.behance.net/gallery/240623047/Culture-Scape",
+    title: "Swiftcart",
+    tagline: "AI shopping · iOS",
+    image: "/redesign/projects/swiftcart.jpg",
+    href: "/swiftcart",
+  },
+  {
+    title: "Pockit",
+    tagline: "Budgeting · iOS",
+    image: "/redesign/projects/pockit.jpg",
+    href: "/pockit",
   },
   {
     title: "Hatchyverse",

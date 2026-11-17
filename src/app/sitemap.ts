@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const BASE = "https://eyeoyibotsolaye.com";
-const paths = ["/", "/about", "/design-engineering", "/fitness-ai", "/pill-pal", "/swiftcart", "/pockit"];
+const paths = ["/", "/about", "/design-engineering", "/fitness-ai", "/pill-pal", "/swiftcart", "/pockit", "/hollis"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return paths.map((path) => ({
