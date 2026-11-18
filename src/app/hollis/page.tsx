@@ -13,7 +13,7 @@ const P = "/redesign/work/hollis";
 // Case study slides, exported at 4x (5600px wide) from the Behance deck.
 // The full deck, including the slides left out here, is on Behance.
 const slides = [
-  { file: "01-hero.jpg", h: 7880, alt: "Hollis: investing apps lose people at the SSN screen, so this one shows the plan first" },
+  { file: "01-hero-v2.jpg", h: 8320, alt: "Hollis: investing apps lose people at the SSN screen, so this one shows the plan first" },
   { file: "02-problem.jpg", h: 9172, alt: "The problem: people came in with a goal and the apps handed them a form" },
   { file: "03-solution.jpg", h: 7352, alt: "The solution: the plan comes first, paperwork after" },
   { file: "05-goal-to-plan.jpg", h: 8156, alt: "Mobile: from a goal to a plan in three questions" },
