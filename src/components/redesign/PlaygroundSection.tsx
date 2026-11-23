@@ -1,6 +1,5 @@
-import Image from "next/image";
 import { playgroundShots } from "@/data/homeContent";
-import PlaygroundVideo from "./PlaygroundVideo";
+import PlaygroundFilms from "./PlaygroundFilms";
 
 export default function PlaygroundSection() {
   return (
@@ -20,32 +19,7 @@ export default function PlaygroundSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-[28px] sm:gap-[16px] lg:gap-[24px] items-start w-full">
-        {playgroundShots.map((shot) => (
-          <figure key={shot.caption} className="flex flex-col gap-[12px] items-start w-full">
-            <div
-              className="relative w-full rounded-[20px] lg:rounded-[16px] overflow-hidden shrink-0"
-              style={{ aspectRatio: shot.aspect }}
-            >
-              <Image
-                src={shot.image}
-                alt={shot.caption}
-                fill
-                quality={95}
-                sizes="(min-width: 1280px) 354px, (min-width: 1024px) 707px, (min-width: 640px) 50vw, calc(100vw - 40px)"
-                className="object-cover"
-              />
-              {shot.video && <PlaygroundVideo src={shot.video} poster={shot.image} label={shot.caption} />}
-            </div>
-            <figcaption
-              className="font-[family-name:var(--font-dm-sans)] text-[14px]"
-              style={{ color: "var(--rd-text-muted)" }}
-            >
-              {shot.caption}
-            </figcaption>
-          </figure>
-        ))}
-      </div>
+      <PlaygroundFilms shots={playgroundShots} />
     </section>
   );
 }
