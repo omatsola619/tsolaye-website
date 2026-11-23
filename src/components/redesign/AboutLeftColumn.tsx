@@ -43,7 +43,7 @@ export default function AboutLeftColumn() {
           <div className="lg:hidden flex flex-col gap-[12px] w-full">
             <a
               href={`mailto:${EMAIL}`}
-              className="flex gap-[6px] items-center justify-center h-[48px] px-3 rounded-full transition-opacity hover:opacity-80"
+              className="flex gap-[6px] items-center justify-center h-[48px] px-3 rounded-full transition-opacity hover:opacity-80 rd-cta"
               style={{ backgroundColor: "var(--rd-btn-bg)" }}
             >
               <span
@@ -77,7 +77,7 @@ export default function AboutLeftColumn() {
 
           {/* ---------- Desktop ---------- */}
           <div className="hidden lg:flex gap-[12px] items-center">
-            <PrimaryButton label="Email me" icon={ArrowUpRight01Icon} href={`mailto:${EMAIL}`} />
+            <PrimaryButton label="Email me" icon={ArrowUpRight01Icon} href={`mailto:${EMAIL}`} variant="cta" />
             <a
               href={LINKEDIN_URL}
               target="_blank"

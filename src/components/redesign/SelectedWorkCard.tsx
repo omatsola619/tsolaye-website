@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { ArrowRight01Icon } from "@hugeicons/core-free-icons";
+import { ArrowRight02Icon } from "@hugeicons/core-free-icons";
 import type { SelectedWorkItem } from "@/data/homeContent";
 import TagLabel from "./TagLabel";
 
 export default function SelectedWorkCard({ item }: { item: SelectedWorkItem }) {
   const { title, statusLabel, statusBg, statusText, context, description, image, imageFit, tags, href, cardBg } =
     item;
-  const buttonLabel = item.buttonLabel ?? "View project";
+  const buttonLabel = item.buttonLabel ?? "Read case study";
   const external = /^https?:\/\//.test(href);
   const imagePosition = item.imagePosition ?? "center top";
 
@@ -95,13 +95,13 @@ export default function SelectedWorkCard({ item }: { item: SelectedWorkItem }) {
           href={href}
           target={external ? "_blank" : undefined}
           rel={external ? "noreferrer" : undefined}
-          className="flex gap-[6px] items-center justify-center w-full h-[48px] rounded-[10px] bg-[#121212] mt-4 transition-opacity hover:opacity-90"
+          className="flex gap-[8px] items-center justify-center w-full h-[52px] rounded-[12px] bg-[var(--rd-cta-bg)] hover:bg-[var(--rd-cta-bg-hover)] mt-4 transition-colors"
         >
-          <span className="font-[family-name:var(--font-dm-sans)] font-medium text-[15px] leading-[20px] text-white tracking-[-0.084px] whitespace-nowrap">
+          <span className="font-[family-name:var(--font-dm-sans)] font-semibold text-[16px] leading-[20px] text-white tracking-[-0.084px] whitespace-nowrap">
             {buttonLabel}
           </span>
           <span className="relative shrink-0 flex items-center text-white">
-            <HugeiconsIcon icon={ArrowRight01Icon} size={18} />
+            <HugeiconsIcon icon={ArrowRight02Icon} size={18} />
           </span>
         </a>
       </div>
@@ -170,8 +170,8 @@ export default function SelectedWorkCard({ item }: { item: SelectedWorkItem }) {
           </p>
         </div>
 
-        <div className="flex items-start justify-between pl-[32px] w-full gap-4">
-          <div className="flex gap-[17px] items-center flex-wrap min-w-0 flex-1">
+        <div className="flex flex-col items-start px-[32px] pb-[8px] w-full gap-[24px]">
+          <div className="flex gap-[17px] items-center flex-wrap min-w-0 w-full">
             {tags.map((tag) => (
               <span
                 key={tag}
@@ -192,15 +192,13 @@ export default function SelectedWorkCard({ item }: { item: SelectedWorkItem }) {
             href={href}
             target={external ? "_blank" : undefined}
             rel={external ? "noreferrer" : undefined}
-            className="flex gap-[2px] items-center justify-center p-[6px] rounded-[8px] shrink-0 bg-[#121212] hover:opacity-90 transition-opacity"
+            className="flex gap-[8px] items-center justify-center w-full h-[56px] rounded-[12px] bg-[var(--rd-cta-bg)] hover:bg-[var(--rd-cta-bg-hover)] transition-colors"
           >
-            <span className="flex items-center justify-center px-[4px]">
-              <span className="font-[family-name:var(--font-dm-sans)] font-medium text-[14px] leading-[20px] text-white tracking-[-0.084px] whitespace-nowrap">
-                {buttonLabel}
-              </span>
+            <span className="font-[family-name:var(--font-dm-sans)] font-semibold text-[17px] leading-[20px] text-white tracking-[-0.084px] whitespace-nowrap">
+              {buttonLabel}
             </span>
-            <span className="relative shrink-0 flex items-center text-white">
-              <HugeiconsIcon icon={ArrowRight01Icon} size={20} />
+            <span className="relative shrink-0 flex items-center text-white transition-transform group-hover:translate-x-[3px]">
+              <HugeiconsIcon icon={ArrowRight02Icon} size={20} />
             </span>
           </a>
         </div>

@@ -9,6 +9,8 @@ type PrimaryButtonProps = {
   target?: "_blank" | "_self";
   /** Saves the linked file instead of opening it; value is the saved file name. */
   download?: string;
+  /** "cta" uses the blue action colour; default stays black/white. */
+  variant?: "default" | "cta";
 };
 
 export default function PrimaryButton({
@@ -18,9 +20,11 @@ export default function PrimaryButton({
   onClick,
   target,
   download,
+  variant = "default",
 }: PrimaryButtonProps) {
-  const className =
-    "border flex gap-[10px] items-center justify-center px-[24px] py-[16px] rounded-[32px] shrink-0 transition-opacity hover:opacity-80";
+  const className = `border flex gap-[10px] items-center justify-center px-[24px] py-[16px] rounded-[32px] shrink-0 transition-opacity hover:opacity-80${
+    variant === "cta" ? " rd-cta" : ""
+  }`;
   const style = {
     backgroundColor: "var(--rd-btn-bg)",
     borderColor: "var(--rd-btn-border)",

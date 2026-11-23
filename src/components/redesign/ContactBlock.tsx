@@ -22,12 +22,12 @@ export default function ContactBlock() {
       <div className="flex flex-wrap gap-[16px] items-center">
         <a
           href={`mailto:${EMAIL}`}
-          className="bg-white flex gap-[10px] items-center justify-center px-[24px] py-[16px] rounded-[32px] shrink-0 transition-opacity hover:opacity-90"
+          className="rd-cta flex gap-[10px] items-center justify-center px-[24px] py-[16px] rounded-[32px] shrink-0"
         >
-          <span className="font-[family-name:var(--font-dm-sans)] font-semibold text-[14px] text-[#121212] tracking-[0.014px] whitespace-nowrap">
+          <span className="font-[family-name:var(--font-dm-sans)] font-semibold text-[14px] text-white tracking-[0.014px] whitespace-nowrap">
             Email me
           </span>
-          <span className="relative shrink-0 flex items-center text-[#121212]">
+          <span className="relative shrink-0 flex items-center text-white">
             <HugeiconsIcon icon={ArrowUpRight01Icon} size={22} />
           </span>
         </a>

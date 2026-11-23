@@ -44,7 +44,7 @@ export default function MoreCaseStudies() {
           </span>
           <span
             className="flex items-center gap-[4px] font-[family-name:var(--font-dm-sans)] font-semibold text-[15px] whitespace-nowrap shrink-0"
-            style={{ color: "var(--rd-text)" }}
+            style={{ color: "var(--rd-cta-text)" }}
           >
             <span className="hidden lg:inline">View project</span>
             <HugeiconsIcon icon={ArrowRight01Icon} size={16} />

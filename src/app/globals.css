@@ -83,10 +83,32 @@ html.js [data-reveal]:not([data-reveal-state]) {
   --rd-avatar-border: #8e8e8e;
   --rd-divider: #d9d9d9;
   --rd-icon-invert: none;
+  /* Action (call-to-action) blue. Used only for "Read case study" buttons and
+     case study links, so it always means "click here". White text: 6.7:1. */
+  --rd-cta-bg: #1d4ed8;
+  --rd-cta-bg-hover: #1e40af;
+  --rd-cta-text: #1d4ed8;
 }
 
 .dark .rd-card-bg {
   background-color: var(--rd-card-bg) !important;
+}
+
+/* Action-blue buttons ("Email me"). Overrides the inline black/white button
+   colours so the same component can be blue here and stay black elsewhere. */
+.rd-cta {
+  background-color: var(--rd-cta-bg) !important;
+  border-color: var(--rd-cta-bg) !important;
+  opacity: 1 !important;
+  transition: background-color 150ms ease;
+}
+.rd-cta:hover {
+  background-color: var(--rd-cta-bg-hover) !important;
+  border-color: var(--rd-cta-bg-hover) !important;
+}
+.rd-cta,
+.rd-cta * {
+  color: #ffffff !important;
 }
 
 .dark .rd-contain-bg {
@@ -114,6 +136,10 @@ html.js [data-reveal]:not([data-reveal-state]) {
   --rd-avatar-border: #4a4a4a;
   --rd-divider: #2a2a2a;
   --rd-icon-invert: invert(1);
+  /* Brighter action blue for dark backgrounds. White text on #2563eb: 5.2:1. */
+  --rd-cta-bg: #2563eb;
+  --rd-cta-bg-hover: #1d4ed8;
+  --rd-cta-text: #60a5fa;
 }
 
 /* Mobile-only fixes (audited against mobile-audit-brief.md). Scoped strictly to
