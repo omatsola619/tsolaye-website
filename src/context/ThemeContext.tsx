@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, useSyncExternalStore, type ReactNode } from "react";
 
 type Theme = "light" | "dark";
 
@@ -14,17 +14,22 @@ const ThemeContext = createContext<ThemeContextValue>({
   toggleTheme: () => {},
 });
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
+// The theme lives on <html class="dark">, set before paint by the inline script in
+// layout.tsx (light unless the visitor chose dark before). React reads it from there,
+// so there is a single source of truth and no extra render on load.
+function subscribe(onChange: () => void) {
+  const observer = new MutationObserver(onChange);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+  return () => observer.disconnect();
+}
+const getSnapshot = (): Theme => (document.documentElement.classList.contains("dark") ? "dark" : "light");
+const getServerSnapshot = (): Theme => "light";
 
-  useEffect(() => {
-    const isDark = document.documentElement.classList.contains("dark");
-    setTheme(isDark ? "dark" : "light");
-  }, []);
+export function ThemeProvider({ children }: { children: ReactNode }) {
+  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const toggleTheme = () => {
     const next: Theme = theme === "light" ? "dark" : "light";
-    setTheme(next);
     document.documentElement.classList.toggle("dark", next === "dark");
     try {
       window.localStorage.setItem("theme", next);

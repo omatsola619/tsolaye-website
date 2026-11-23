@@ -23,6 +23,8 @@ export default function RedesignShell({
     >
       <TopNav activePath={activePath} />
 
+      {/* Main content landmark, so screen-reader and keyboard users can jump past the navigation. */}
+      <main id="main-content">
       {/* Mobile / tablet: one normal stacked page, left content first, then projects */}
       <div className="flex flex-col lg:hidden pt-[91px]">
         <div className="w-full px-5 pt-8 pb-10">{leftColumn}</div>
@@ -46,6 +48,7 @@ export default function RedesignShell({
 
         <ProjectList projects={projects} sections={sections} trailingSection={trailingSection} />
       </div>
+      </main>
     </div>
   );
 }
