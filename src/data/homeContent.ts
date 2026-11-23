@@ -109,20 +109,27 @@ export const moreCaseStudies: MoreCaseStudyItem[] = [
 
 export type PlaygroundShot = {
   caption: string;
+  /** Still image; for a video it is the poster shown before playback. */
   image: string;
   aspect: string;
+  /** Optional silent prototype film (MP4, H.264), played muted on a loop. */
+  video?: string;
 };
 
-// Home's "Playground" — quick visual explorations, not full case studies.
+// Home's "Playground" — quick concepts in motion, not full case studies.
+// Films are the original 1440x1800 exports, unchanged (Axial Open with the
+// music track removed, picture copied as is).
 export const playgroundShots: PlaygroundShot[] = [
   {
-    caption: "Voyago · travel app concept",
-    image: "/redesign/exploration/voyago.jpg",
-    aspect: "755/755",
+    caption: "Plus Ones · group ticketing app concept",
+    image: "/redesign/exploration/plus-ones-poster.jpg",
+    video: "/redesign/exploration/plus-ones.mp4",
+    aspect: "1440/1800",
   },
   {
-    caption: "Glide Cargo · delivery app concept",
-    image: "/redesign/exploration/glide-cargo.jpg",
-    aspect: "755/755",
+    caption: "Axial Open · watch website concept",
+    image: "/redesign/exploration/axial-open-poster.jpg",
+    video: "/redesign/exploration/axial-open.mp4",
+    aspect: "1440/1800",
   },
 ];

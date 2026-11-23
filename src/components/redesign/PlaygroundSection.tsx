@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { playgroundShots } from "@/data/homeContent";
+import PlaygroundVideo from "./PlaygroundVideo";
 
 export default function PlaygroundSection() {
   return (
@@ -15,11 +16,11 @@ export default function PlaygroundSection() {
           className="font-[family-name:var(--font-dm-sans)] text-[14px] lg:text-[16px] text-center"
           style={{ color: "var(--rd-text-muted)" }}
         >
-          Quick visual explorations, not full case studies.
+          Quick concepts in motion, not full case studies.
         </p>
       </div>
 
-      <div className="flex flex-col gap-[28px] lg:gap-[64px] items-start w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-[28px] sm:gap-[16px] lg:gap-[24px] items-start w-full">
         {playgroundShots.map((shot) => (
           <figure key={shot.caption} className="flex flex-col gap-[12px] items-start w-full">
             <div
@@ -30,10 +31,11 @@ export default function PlaygroundSection() {
                 src={shot.image}
                 alt={shot.caption}
                 fill
-                quality={100}
-                sizes="(min-width: 1024px) 707px, calc(100vw - 40px)"
+                quality={95}
+                sizes="(min-width: 1280px) 354px, (min-width: 1024px) 707px, (min-width: 640px) 50vw, calc(100vw - 40px)"
                 className="object-cover"
               />
+              {shot.video && <PlaygroundVideo src={shot.video} poster={shot.image} label={shot.caption} />}
             </div>
             <figcaption
               className="font-[family-name:var(--font-dm-sans)] text-[14px]"
