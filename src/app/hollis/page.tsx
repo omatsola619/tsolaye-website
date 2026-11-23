@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import CaseStudyNav from "@/components/work/CaseStudyNav";
 
 export const metadata: Metadata = {
-  title: "Hollis: Case Study | Tsolaye",
+  title: "Hollis: Case Study",
   description:
     "Hollis is a goal-based investing app that shows people their plan before it asks for their paperwork.",
 };
