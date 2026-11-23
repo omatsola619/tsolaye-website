@@ -112,18 +112,21 @@ export type PlaygroundShot = {
   /** Still image; for a video it is the poster shown before playback. */
   image: string;
   aspect: string;
-  /** Optional silent prototype film (MP4, H.264), played muted on a loop. */
+  /** Optional prototype film (MP4, H.264). Always muted in the grid. */
   video?: string;
+  /** The film has a sound track: it plays with sound when opened in the lightbox. */
+  hasSound?: boolean;
 };
 
 // Home's "Playground" — quick concepts in motion, not full case studies.
-// Films are the original 1440x1800 exports, unchanged (Axial Open with the
-// music track removed, picture copied as is).
+// Films are the original 1440x1800 exports, unchanged. Only Axial Open has a
+// sound track (music); the other three were exported silent.
 export const playgroundShots: PlaygroundShot[] = [
   {
     caption: "Axial Open · watch website concept",
     image: "/redesign/exploration/axial-open-poster.jpg",
     video: "/redesign/exploration/axial-open.mp4",
+    hasSound: true,
     aspect: "1440/1800",
   },
   {

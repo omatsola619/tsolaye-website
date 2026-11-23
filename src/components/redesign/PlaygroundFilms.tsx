@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { Cancel01Icon, Maximize02Icon } from "@hugeicons/core-free-icons";
+import { Cancel01Icon, Maximize02Icon, VolumeHighIcon, VolumeOffIcon } from "@hugeicons/core-free-icons";
 import posthog from "posthog-js";
 import type { PlaygroundShot } from "@/data/homeContent";
 import PlaygroundVideo, { PLAYGROUND_PAUSE, PLAYGROUND_RESUME } from "./PlaygroundVideo";
@@ -12,21 +12,38 @@ import PlaygroundVideo, { PLAYGROUND_PAUSE, PLAYGROUND_RESUME } from "./Playgrou
  * Playground grid. Clicking a film opens it on its own in a lightbox
  * (native <dialog>: Esc closes, focus stays inside, the page behind is inert).
  * Only the opened film plays; the grid films pause until it is closed.
+ *
+ * Sound: grid films are always silent. A film with a sound track opens muted in
+ * the lightbox, and the visitor turns the sound on with the "Sound on" button
+ * (or the player's own volume control). Closing always mutes it again.
  */
 export default function PlaygroundFilms({ shots }: { shots: PlaygroundShot[] }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const filmRef = useRef<HTMLVideoElement>(null);
   const openerRef = useRef<HTMLButtonElement | null>(null);
   const [active, setActive] = useState<PlaygroundShot | null>(null);
+  const [soundOn, setSoundOn] = useState(false);
 
   const open = (shot: PlaygroundShot, opener: HTMLButtonElement) => {
     openerRef.current = opener;
+    setSoundOn(false);
     setActive(shot);
     window.dispatchEvent(new Event(PLAYGROUND_PAUSE));
     if (posthog.__loaded) posthog.capture("prototype_film_opened", { film: shot.caption.split(" · ")[0] });
   };
 
   const close = useCallback(() => dialogRef.current?.close(), []);
+
+  const toggleSound = () => {
+    const film = filmRef.current;
+    if (!film) return;
+    film.muted = !film.muted;
+    if (!film.muted) {
+      if (film.volume === 0) film.volume = 1;
+      if (film.paused) film.play().catch(() => {});
+      if (posthog.__loaded && active) posthog.capture("prototype_film_sound_on", { film: active.caption.split(" · ")[0] });
+    }
+  };
 
   // Show the dialog once the chosen film is rendered into it, and stop the page
   // behind from scrolling while it is open.
@@ -37,17 +54,23 @@ export default function PlaygroundFilms({ shots }: { shots: PlaygroundShot[] }) 
     const root = document.documentElement;
     root.classList.add("overflow-hidden");
     const film = filmRef.current;
-    if (film && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (film) {
+      film.muted = true; // always open muted; sound only when the visitor turns it on
       film.currentTime = 0;
-      film.play().catch(() => {});
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) film.play().catch(() => {});
     }
     return () => root.classList.remove("overflow-hidden");
   }, [active]);
 
   // Runs for every way of closing (button, backdrop, Esc).
   const onClosed = () => {
-    filmRef.current?.pause();
+    const film = filmRef.current;
+    if (film) {
+      film.muted = true;
+      film.pause();
+    }
     setActive(null);
+    setSoundOn(false);
     window.dispatchEvent(new Event(PLAYGROUND_RESUME));
     openerRef.current?.focus({ preventScroll: true });
   };
@@ -106,18 +129,32 @@ export default function PlaygroundFilms({ shots }: { shots: PlaygroundShot[] }) 
       >
         {active?.video && (
           <div className="relative flex flex-col items-center gap-[12px] pointer-events-none">
-            <video
-              ref={filmRef}
-              key={active.video}
-              src={active.video}
-              poster={active.image}
-              muted
-              loop
-              playsInline
-              controls
-              preload="auto"
-              className="pointer-events-auto block rounded-[16px] bg-black object-contain w-[min(92vw,calc((100dvh-120px)*0.8))] aspect-[1440/1800]"
-            />
+            <div className="relative pointer-events-auto">
+              <video
+                ref={filmRef}
+                key={active.video}
+                src={active.video}
+                poster={active.image}
+                muted
+                loop
+                playsInline
+                controls
+                preload="auto"
+                onVolumeChange={(e) => setSoundOn(!e.currentTarget.muted && e.currentTarget.volume > 0)}
+                className="block rounded-[16px] bg-black object-contain w-[min(92vw,calc((100dvh-120px)*0.8))] aspect-[1440/1800]"
+              />
+              {active.hasSound && (
+                <button
+                  type="button"
+                  onClick={toggleSound}
+                  aria-pressed={soundOn}
+                  className="absolute left-3 top-3 flex items-center gap-[8px] h-[40px] pl-[12px] pr-[14px] rounded-full bg-black/65 text-white backdrop-blur-sm font-[family-name:var(--font-dm-sans)] text-[14px] font-medium hover:bg-black/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                >
+                  <HugeiconsIcon icon={soundOn ? VolumeHighIcon : VolumeOffIcon} size={18} />
+                  {soundOn ? "Sound off" : "Sound on"}
+                </button>
+              )}
+            </div>
             <p className="font-[family-name:var(--font-dm-sans)] text-[14px] text-white/85 text-center px-4">
               {active.caption}
             </p>
