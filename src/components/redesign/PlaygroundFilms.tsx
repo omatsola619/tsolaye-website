@@ -141,23 +141,26 @@ export default function PlaygroundFilms({ shots }: { shots: PlaygroundShot[] }) 
                 controls
                 preload="auto"
                 onVolumeChange={(e) => setSoundOn(!e.currentTarget.muted && e.currentTarget.volume > 0)}
-                className="block rounded-[16px] bg-black object-contain w-[min(92vw,calc((100dvh-120px)*0.8))] aspect-[1440/1800]"
+                className="block rounded-[16px] bg-black object-contain w-[min(92vw,calc((100dvh-140px)*0.8))] aspect-[1440/1800]"
               />
+            </div>
+            {/* Caption row under the film, so nothing covers the design itself. */}
+            <div className="pointer-events-auto flex flex-wrap items-center justify-center gap-x-[16px] gap-y-[8px] px-4">
+              <p className="font-[family-name:var(--font-dm-sans)] text-[14px] text-white/85 text-center">
+                {active.caption}
+              </p>
               {active.hasSound && (
                 <button
                   type="button"
                   onClick={toggleSound}
                   aria-pressed={soundOn}
-                  className="absolute left-3 top-3 flex items-center gap-[8px] h-[40px] pl-[12px] pr-[14px] rounded-full bg-black/65 text-white backdrop-blur-sm font-[family-name:var(--font-dm-sans)] text-[14px] font-medium hover:bg-black/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="flex items-center gap-[8px] h-[40px] pl-[12px] pr-[14px] rounded-full bg-white/15 text-white font-[family-name:var(--font-dm-sans)] text-[14px] font-medium hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   <HugeiconsIcon icon={soundOn ? VolumeHighIcon : VolumeOffIcon} size={18} />
                   {soundOn ? "Sound off" : "Sound on"}
                 </button>
               )}
             </div>
-            <p className="font-[family-name:var(--font-dm-sans)] text-[14px] text-white/85 text-center px-4">
-              {active.caption}
-            </p>
           </div>
         )}
         <button

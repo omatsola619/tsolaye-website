@@ -440,7 +440,7 @@ export default function SwiftCartCaseStudy() {
                 <div className={`${GLASS} bg-white/45 p-[24px] md:p-[32px]`}>
                   <div className="flex items-start justify-between gap-4">
                     <Label className="text-[#ae4200]">{"// OPTION B"}</Label>
-                    <span className="-mt-[2px] md:-mt-[8px] rounded-full bg-[#ff7a00] text-white font-bold text-[14px] md:text-[20px] tracking-[1.2px] md:tracking-[1.6px] uppercase px-[16px] h-[32px] md:h-[40px] flex items-center leading-none">
+                    <span className="-mt-[2px] md:-mt-[8px] rounded-full bg-[#c25000] text-white font-bold text-[14px] md:text-[20px] tracking-[1.2px] md:tracking-[1.6px] uppercase px-[16px] h-[32px] md:h-[40px] flex items-center leading-none">
                       Chosen
                     </span>
                   </div>
@@ -715,7 +715,7 @@ export default function SwiftCartCaseStudy() {
             <div className="mt-[32px] md:mt-[64px] xl:mt-[92px] xl:ml-auto xl:max-w-[540px]">
               <div className="relative rounded-[32px] border-[1.5px] border-white/80 backdrop-blur-[25px] bg-white/[0.42] shadow-[0_24px_30px_rgba(0,0,0,0.14),inset_0_1px_0_rgba(255,255,255,0.35)] p-[22px] md:p-[29px]">
                 <div className="flex items-center gap-[14px]">
-                  <span className="size-[44px] md:size-[52px] shrink-0 rounded-full bg-[#ff7a00] text-white font-semibold text-[17px] md:text-[20px] flex items-center justify-center">
+                  <span className="size-[44px] md:size-[52px] shrink-0 rounded-full bg-[#c25000] text-white font-semibold text-[17px] md:text-[20px] flex items-center justify-center">
                     MR
                   </span>
                   <p className="font-semibold text-[#16171a] text-[18px] md:text-[22px] leading-[1.45] flex-1">
@@ -744,7 +744,7 @@ export default function SwiftCartCaseStudy() {
                     {STEPS.map((s, i) => (
                       <p
                         key={s.label}
-                        className={`${s.state === "current" ? "font-semibold text-[#16171a]" : "font-medium text-[#5e6168]"} ${
+                        className={`${s.state === "current" ? "font-semibold text-[#16171a]" : "font-medium text-[#3f4147]"} ${
                           i === 0 ? "text-left" : i === STEPS.length - 1 ? "text-right" : "text-center"
                         }`}
                       >
