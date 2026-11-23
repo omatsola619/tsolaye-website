@@ -41,11 +41,11 @@ export const metadata: Metadata = {
     template: "%s | Tsolaye",
   },
   description:
-    "Product designer building clear, accessible mobile and web products. Case studies: Fitness AI, Pill Pal, SwiftCart and Pockit.",
+    "Product designer building clear, accessible mobile and web products. Case studies: Fitness AI, Pill Pal and SwiftCart.",
   openGraph: {
     title: "Tsolaye - Product Designer",
     description:
-      "Product designer building clear, accessible mobile and web products. Case studies: Fitness AI, Pill Pal, SwiftCart and Pockit.",
+      "Product designer building clear, accessible mobile and web products. Case studies: Fitness AI, Pill Pal and SwiftCart.",
     type: "website",
     siteName: "Tsolaye Eyeoyibo",
   },
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Tsolaye - Product Designer",
     description:
-      "Product designer building clear, accessible mobile and web products. Case studies: Fitness AI, Pill Pal, SwiftCart and Pockit.",
+      "Product designer building clear, accessible mobile and web products. Case studies: Fitness AI, Pill Pal and SwiftCart.",
   },
 };
 

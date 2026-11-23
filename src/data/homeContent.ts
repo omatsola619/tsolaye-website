@@ -94,12 +94,6 @@ export const moreCaseStudies: MoreCaseStudyItem[] = [
     href: "/swiftcart",
   },
   {
-    title: "Pockit",
-    tagline: "Budgeting · iOS",
-    image: "/redesign/projects/pockit.jpg",
-    href: "/pockit",
-  },
-  {
     title: "Hatchyverse",
     tagline: "Gaming · Website",
     image: "/redesign/projects/hatchyverse.jpg",
@@ -110,12 +104,6 @@ export const moreCaseStudies: MoreCaseStudyItem[] = [
     tagline: "Event discovery · iOS",
     image: "/redesign/projects/ravyn.jpg",
     href: "https://www.behance.net/gallery/252298719/Ravyn-Your-Local-Event-Finder",
-  },
-  {
-    title: "BitLock",
-    tagline: "Digital finance wallet · iOS",
-    image: "/redesign/projects/bitlock.jpg",
-    href: "https://www.behance.net/gallery/212266943/BitLock-Web3-Mobile-App",
   },
 ];
 
@@ -136,10 +124,5 @@ export const playgroundShots: PlaygroundShot[] = [
     caption: "Glide Cargo · delivery app concept",
     image: "/redesign/exploration/glide-cargo.jpg",
     aspect: "755/755",
-  },
-  {
-    caption: "Reven · game landing page",
-    image: "/redesign/exploration/reven.jpg",
-    aspect: "755/490",
   },
 ];

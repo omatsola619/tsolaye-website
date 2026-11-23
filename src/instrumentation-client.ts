@@ -24,7 +24,6 @@ const CASE_STUDY_PAGES: Record<string, string> = {
   "/hollis": "Hollis",
   "/pill-pal": "Pill Pal",
   "/swiftcart": "Swiftcart",
-  "/pockit": "Pockit",
 };
 
 // Gives the clicks recruiters care about clear names in the dashboard.
@@ -46,6 +45,8 @@ function trackKeyClicks() {
         posthog.capture("email_clicked", { from_page });
       } else if (href.includes("linkedin.com")) {
         posthog.capture("linkedin_clicked", { from_page });
+      } else if (href.includes("github.com")) {
+        posthog.capture("github_clicked", { from_page });
       } else if (href.includes("wa.me")) {
         posthog.capture("whatsapp_clicked", { from_page });
       } else if (href.includes("behance.net/gallery/")) {

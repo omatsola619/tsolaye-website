@@ -3,10 +3,11 @@ import {
   ArrowUpRight01Icon,
   Linkedin01Icon,
   Behance01Icon,
+  GithubIcon,
   WhatsappIcon,
   Download04Icon,
 } from "@hugeicons/core-free-icons";
-import { EMAIL, LINKEDIN_URL, BEHANCE_URL, WHATSAPP_URL, CV_PATH } from "@/data/contact";
+import { EMAIL, LINKEDIN_URL, BEHANCE_URL, GITHUB_URL, WHATSAPP_URL, CV_PATH } from "@/data/contact";
 
 export default function ContactBlock() {
   return (
@@ -56,6 +57,15 @@ export default function ContactBlock() {
         >
           <HugeiconsIcon icon={Behance01Icon} size={16} />
           Behance
+        </a>
+        <a
+          href={GITHUB_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-[6px] font-[family-name:var(--font-dm-sans)] font-medium text-[15px] text-[#bfbdb2] hover:text-white transition-colors"
+        >
+          <HugeiconsIcon icon={GithubIcon} size={16} />
+          GitHub
         </a>
         <a
           href={WHATSAPP_URL}
