@@ -20,8 +20,9 @@ export default function MoreCaseStudies() {
         <a
           key={item.title}
           href={item.href}
-          target="_blank"
-          rel="noreferrer"
+          // Case studies on this site open in the same tab; outside links open a new one.
+          target={item.href.startsWith("/") ? undefined : "_blank"}
+          rel={item.href.startsWith("/") ? undefined : "noreferrer"}
           className="flex gap-[16px] items-center w-full py-[14px] border-t transition-opacity hover:opacity-80"
           style={{ borderColor: "var(--rd-divider)" }}
         >
