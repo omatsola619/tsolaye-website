@@ -88,16 +88,16 @@ export type MoreCaseStudyItem = {
 // Home's "More case studies" — condensed rows below the 4 flagship cards.
 export const moreCaseStudies: MoreCaseStudyItem[] = [
   {
-    title: "Swiftcart",
-    tagline: "AI shopping · iOS",
-    image: "/redesign/projects/swiftcart.jpg",
-    href: "/swiftcart",
-  },
-  {
     title: "Hatchyverse",
     tagline: "Gaming · Website",
     image: "/redesign/projects/hatchyverse.jpg",
     href: "https://www.hatchyverse.com",
+  },
+  {
+    title: "Swiftcart",
+    tagline: "AI shopping · iOS",
+    image: "/redesign/projects/swiftcart.jpg",
+    href: "https://www.behance.net/gallery/256675029/Swift-Cart-AI-Shopping-Assistant",
   },
   {
     title: "Ravyn",
