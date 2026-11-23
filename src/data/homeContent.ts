@@ -121,15 +121,27 @@ export type PlaygroundShot = {
 // music track removed, picture copied as is).
 export const playgroundShots: PlaygroundShot[] = [
   {
+    caption: "Axial Open · watch website concept",
+    image: "/redesign/exploration/axial-open-poster.jpg",
+    video: "/redesign/exploration/axial-open.mp4",
+    aspect: "1440/1800",
+  },
+  {
+    caption: "Moko · kids' money app concept",
+    image: "/redesign/exploration/moko-poster.jpg",
+    video: "/redesign/exploration/moko.mp4",
+    aspect: "1440/1800",
+  },
+  {
     caption: "Plus Ones · group ticketing app concept",
     image: "/redesign/exploration/plus-ones-poster.jpg",
     video: "/redesign/exploration/plus-ones.mp4",
     aspect: "1440/1800",
   },
   {
-    caption: "Axial Open · watch website concept",
-    image: "/redesign/exploration/axial-open-poster.jpg",
-    video: "/redesign/exploration/axial-open.mp4",
+    caption: "Still · recovery app concept",
+    image: "/redesign/exploration/still-poster.jpg",
+    video: "/redesign/exploration/still.mp4",
     aspect: "1440/1800",
   },
 ];
