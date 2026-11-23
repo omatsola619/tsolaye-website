@@ -293,16 +293,20 @@ export default function FitnessAICaseStudy() {
           <section className="flex flex-col gap-[40px] pb-[120px]">
             <div>
               <Eyebrow>Final design · Logging</Eyebrow>
-              <h2 className="font-normal text-[36px] md:text-[56px] lg:text-[72px] leading-[1.08] tracking-[-1.8px] mt-[12px] text-[#0b0b0c]">
-                6 ways to log, one sheet to choose from.
-              </h2>
+              <BlockReveal as="h2" trigger="scroll" className="font-normal text-[36px] md:text-[56px] lg:text-[72px] leading-[1.08] tracking-[-1.8px] mt-[12px]">
+                <span className="text-[#0b0b0c]">Six ways to log, </span>
+                <span className="text-[#a3a3a8]">one sheet to choose from.</span>
+              </BlockReveal>
+              <p className="mt-[24px] max-w-[640px] text-[20px] md:text-[24px] leading-[1.4] text-[#5f5f66]">
+                A photo is the default, but every other way to log is one tap away on the same sheet.
+              </p>
             </div>
             <div tabIndex={0} role="region" aria-label="Log food sheet screens, scrollable" className="-mx-5 px-5 lg:mx-0 lg:w-full lg:px-0 overflow-x-auto">
               <Image
-                src="/redesign/work/fitness-ai/log-a-meal.jpg"
-                alt="Log food sheet: scan, barcode, search, portions"
-                width={2000}
-                height={1069}
+                src="/redesign/work/fitness-ai/log-a-meal-v2.jpg"
+                alt="Log food sheet: scan, barcode, label, menu, search or describe; barcode scanner; search results; portion keypad"
+                width={4640}
+                height={3098}
                 quality={95}
                 sizes="1160px"
                 className="w-[800px] max-w-none rounded-[44px] lg:w-full lg:h-auto"
