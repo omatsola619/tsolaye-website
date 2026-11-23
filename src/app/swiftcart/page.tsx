@@ -756,7 +756,7 @@ export default function SwiftCartCaseStudy() {
 
                 <div className="h-px bg-[rgba(22,23,26,0.12)] mt-[28px] md:mt-[40px]" />
                 <div className="flex items-center justify-between mt-[24px] md:mt-[20px]">
-                  <p className="font-medium text-[#5e6168] text-[16px] md:text-[20px] leading-[1.45]">Delivery code</p>
+                  <p className="font-medium text-[#3f4147] text-[16px] md:text-[20px] leading-[1.45]">Delivery code</p>
                   <p className="font-semibold text-[#16171a] text-[28px] md:text-[36px] tracking-[7.2px] leading-[1.45]">
                     4829
                   </p>
