@@ -4,7 +4,7 @@ import CaseStudyNav from "@/components/work/CaseStudyNav";
 import BlockReveal from "@/components/work/BlockReveal";
 
 export const metadata: Metadata = {
-  title: "Fitness AI: Case Study | Tsolaye",
+  title: "Fitness AI: Case Study",
   description:
     "Fitness AI is a calorie tracker that turns one photo of your plate into numbers people can trust.",
 };
@@ -14,13 +14,13 @@ function Rule() {
 }
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
-  return <p className="font-medium text-[#a3a3a8] text-[20px] md:text-[22px]">{children}</p>;
+  return <p className="font-medium text-[#6d6d70] text-[20px] md:text-[22px]">{children}</p>;
 }
 
 function MetaItem({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex flex-col gap-[10px]">
-      <p className="font-medium text-[#a3a3a8] text-[18px] md:text-[20px]">{label}</p>
+      <p className="font-medium text-[#6d6d70] text-[18px] md:text-[20px]">{label}</p>
       <p className="font-semibold text-[#0b0b0c] text-[20px] md:text-[24px] tracking-[-0.24px]">{value}</p>
     </div>
   );
@@ -50,7 +50,7 @@ export default function FitnessAICaseStudy() {
               <Eyebrow>About project</Eyebrow>
               <BlockReveal as="h1" trigger="load" className="font-normal text-[40px] md:text-[64px] lg:text-[76px] leading-[1.08] tracking-[-0.4px]">
                 <span className="text-[#0b0b0c]">Fitness AI is a calorie tracker that </span>
-                <span className="text-[#a3a3a8]">turns one photo of your plate </span>
+                <span className="text-[#6d6d70]">turns one photo of your plate </span>
                 <span className="text-[#0b0b0c]">into numbers people can trust.</span>
               </BlockReveal>
             </div>
@@ -99,7 +99,7 @@ export default function FitnessAICaseStudy() {
                 <Eyebrow>The problem</Eyebrow>
                 <BlockReveal as="h2" trigger="scroll" className="font-normal text-[36px] md:text-[56px] lg:text-[72px] leading-[1.08] tracking-[-1.8px] mt-[12px]">
                   <span className="text-[#0b0b0c]">Calorie tracking works. </span>
-                  <span className="text-[#a3a3a8]">Most people just quit too early.</span>
+                  <span className="text-[#6d6d70]">Most people just quit too early.</span>
                 </BlockReveal>
               </div>
               <p className="flex-1 max-w-[640px] text-[22px] md:text-[26px] leading-[1.4] tracking-[-0.13px] text-[#5f5f66] md:pt-[40px]">
@@ -140,7 +140,7 @@ export default function FitnessAICaseStudy() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
               <div className="flex flex-col gap-[16px] md:border-l md:border-[#e3e3e6] md:pl-[32px] md:first:border-l-0 md:first:pl-0">
-                <p className="font-medium text-[#1e88e5] text-[18px] md:text-[20px]">Problem 1 · Slow logging</p>
+                <p className="font-medium text-[#1971bf] text-[18px] md:text-[20px]">Problem 1 · Slow logging</p>
                 <p className="font-medium text-[#0b0b0c] text-[28px] md:text-[34px] leading-[1.15] tracking-[-0.51px]">
                   Logging took too long
                 </p>
@@ -149,7 +149,7 @@ export default function FitnessAICaseStudy() {
                 </p>
               </div>
               <div className="flex flex-col gap-[16px] md:border-l md:border-[#e3e3e6] md:pl-[32px]">
-                <p className="font-medium text-[#1e88e5] text-[18px] md:text-[20px]">Problem 2 · Untrusted numbers</p>
+                <p className="font-medium text-[#1971bf] text-[18px] md:text-[20px]">Problem 2 · Untrusted numbers</p>
                 <p className="font-medium text-[#0b0b0c] text-[28px] md:text-[34px] leading-[1.15] tracking-[-0.51px]">
                   AI numbers felt like a guess
                 </p>
@@ -158,7 +158,7 @@ export default function FitnessAICaseStudy() {
                 </p>
               </div>
               <div className="flex flex-col gap-[16px] md:border-l md:border-[#e3e3e6] md:pl-[32px]">
-                <p className="font-medium text-[#1e88e5] text-[18px] md:text-[20px]">Problem 3 · Wrong home screen</p>
+                <p className="font-medium text-[#1971bf] text-[18px] md:text-[20px]">Problem 3 · Wrong home screen</p>
                 <p className="font-medium text-[#0b0b0c] text-[28px] md:text-[34px] leading-[1.15] tracking-[-0.51px]">
                   Home answered the wrong question
                 </p>
@@ -176,7 +176,7 @@ export default function FitnessAICaseStudy() {
                 of new users stop logging within the first week
               </p>
             </div>
-            <p className="font-medium text-[#a3a3a8] text-[18px] md:text-[20px]">
+            <p className="font-medium text-[#6d6d70] text-[18px] md:text-[20px]">
               Source: Fitness AI user research, 2026
             </p>
 
@@ -186,7 +186,7 @@ export default function FitnessAICaseStudy() {
               <Eyebrow>Business task</Eyebrow>
               <p className="text-[32px] md:text-[40px] lg:text-[48px] leading-[1.15] tracking-[-0.32px] max-w-[720px]">
                 <span className="text-[#0b0b0c]">Make logging </span>
-                <span className="text-[#a3a3a8]">fast enough to become a habit </span>
+                <span className="text-[#6d6d70]">fast enough to become a habit </span>
                 <span className="text-[#0b0b0c]">and honest enough to trust.</span>
               </p>
             </div>
@@ -198,7 +198,7 @@ export default function FitnessAICaseStudy() {
               <Eyebrow>Decision 1 · Fixes slow logging</Eyebrow>
               <BlockReveal as="h2" trigger="scroll" className="font-normal text-[36px] md:text-[56px] lg:text-[72px] leading-[1.08] tracking-[-1.8px] mt-[12px]">
                 <span className="text-[#0b0b0c]">Photo first, </span>
-                <span className="text-[#a3a3a8]">typing as the fallback.</span>
+                <span className="text-[#6d6d70]">typing as the fallback.</span>
               </BlockReveal>
             </div>
             <div tabIndex={0} role="region" aria-label="Photo-first logging flow: Snap, Read, Review, Log, See, scrollable" className="-mx-5 px-5 lg:mx-0 lg:w-full lg:px-0 overflow-x-auto">
@@ -220,26 +220,26 @@ export default function FitnessAICaseStudy() {
               <Eyebrow>Decision 2 · Fixes untrusted numbers</Eyebrow>
               <BlockReveal as="h2" trigger="scroll" className="font-normal text-[36px] md:text-[56px] lg:text-[72px] leading-[1.08] tracking-[-1.8px] mt-[12px]">
                 <span className="text-[#0b0b0c]">AI is only useful </span>
-                <span className="text-[#a3a3a8]">when people can check its work.</span>
+                <span className="text-[#6d6d70]">when people can check its work.</span>
               </BlockReveal>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px]">
               <div className="bg-[#f2f2f4] rounded-[32px] p-[28px] flex flex-col gap-[12px]">
-                <p className="font-medium text-[#a3a3a8] text-[18px] md:text-[20px]">Option A</p>
+                <p className="font-medium text-[#6d6d70] text-[18px] md:text-[20px]">Option A</p>
                 <p className="font-medium text-[#0b0b0c] text-[28px] md:text-[32px] tracking-[-0.48px]">One number</p>
                 <p className="text-[#5f5f66] text-[20px] md:text-[24px]">Fast, but there is no way to check it.</p>
               </div>
               <div className="bg-[#f2f2f4] rounded-[32px] p-[28px] flex flex-col gap-[12px]">
-                <p className="font-medium text-[#a3a3a8] text-[18px] md:text-[20px]">Option B</p>
+                <p className="font-medium text-[#6d6d70] text-[18px] md:text-[20px]">Option B</p>
                 <p className="font-medium text-[#0b0b0c] text-[28px] md:text-[32px] tracking-[-0.48px]">Manual entry</p>
                 <p className="text-[#5f5f66] text-[20px] md:text-[24px]">Accurate, but slow enough to make people quit.</p>
               </div>
-              <div className="bg-white border-2 border-[#1e88e5] rounded-[32px] p-[28px] flex flex-col gap-[12px] relative">
-                <span className="absolute top-[24px] right-[24px] bg-[#1e88e5] text-white text-[16px] md:text-[18px] font-semibold rounded-full px-[16px] py-[6px]">
+              <div className="bg-white border-2 border-[#1971bf] rounded-[32px] p-[28px] flex flex-col gap-[12px] relative">
+                <span className="absolute top-[24px] right-[24px] bg-[#1971bf] text-white text-[16px] md:text-[18px] font-semibold rounded-full px-[16px] py-[6px]">
                   Chosen
                 </span>
-                <p className="font-medium text-[#1e88e5] text-[18px] md:text-[20px]">Option C</p>
+                <p className="font-medium text-[#1971bf] text-[18px] md:text-[20px]">Option C</p>
                 <p className="font-medium text-[#0b0b0c] text-[28px] md:text-[32px] tracking-[-0.48px] max-w-[260px]">
                   Estimate with its working
                 </p>
@@ -295,7 +295,7 @@ export default function FitnessAICaseStudy() {
               <Eyebrow>Final design · Logging</Eyebrow>
               <BlockReveal as="h2" trigger="scroll" className="font-normal text-[36px] md:text-[56px] lg:text-[72px] leading-[1.08] tracking-[-1.8px] mt-[12px]">
                 <span className="text-[#0b0b0c]">Six ways to log, </span>
-                <span className="text-[#a3a3a8]">one sheet to choose from.</span>
+                <span className="text-[#6d6d70]">one sheet to choose from.</span>
               </BlockReveal>
               <p className="mt-[24px] max-w-[640px] text-[20px] md:text-[24px] leading-[1.4] text-[#5f5f66]">
                 A photo is the default, but every other way to log is one tap away on the same sheet.
@@ -360,19 +360,19 @@ export default function FitnessAICaseStudy() {
                 <div className="flex flex-col gap-[12px]">
                   <p className="font-normal text-[40px] md:text-[48px] leading-[1] text-[#0b0b0c]">9 s</p>
                   <p className="text-[#0b0b0c] text-[20px]">to log a meal with one photo</p>
-                  <p className="text-[#a3a3a8] text-[16px]">Fixes slow logging · 8 moderated sessions</p>
+                  <p className="text-[#6d6d70] text-[16px]">Fixes slow logging · 8 moderated sessions</p>
                 </div>
                 <Rule />
                 <div className="flex flex-col gap-[12px]">
                   <p className="font-normal text-[40px] md:text-[48px] leading-[1] text-[#0b0b0c]">4.1 / 5</p>
                   <p className="text-[#0b0b0c] text-[20px]">trust in the AI estimates</p>
-                  <p className="text-[#a3a3a8] text-[16px]">Fixes untrusted numbers · post-test survey, 8 people</p>
+                  <p className="text-[#6d6d70] text-[16px]">Fixes untrusted numbers · post-test survey, 8 people</p>
                 </div>
                 <Rule />
                 <div className="flex flex-col gap-[12px]">
                   <p className="font-normal text-[40px] md:text-[48px] leading-[1] text-[#0b0b0c]">6 of 8</p>
                   <p className="text-[#0b0b0c] text-[20px]">found what was left today at a glance</p>
-                  <p className="text-[#a3a3a8] text-[16px]">
+                  <p className="text-[#6d6d70] text-[16px]">
                     Fixes the wrong home screen · 5-second test, 8 people
                   </p>
                 </div>
@@ -397,7 +397,7 @@ export default function FitnessAICaseStudy() {
                 <div className="flex flex-col gap-[12px]">
                   <p className="font-semibold text-[#0b0b0c] text-[22px] md:text-[28px]">Fitness AI</p>
                   <div className="flex items-center gap-[16px]">
-                    <div className="h-[48px] rounded-[10px] bg-[#1e88e5]" style={{ width: "64px" }} />
+                    <div className="h-[48px] rounded-[10px] bg-[#1971bf]" style={{ width: "64px" }} />
                     <span className="font-semibold text-[#0b0b0c] text-[22px] md:text-[28px] shrink-0">9 s</span>
                   </div>
                 </div>

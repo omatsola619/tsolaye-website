@@ -5,7 +5,7 @@ import CaseStudyNav from "@/components/work/CaseStudyNav";
 import BlockReveal from "@/components/work/BlockReveal";
 
 export const metadata: Metadata = {
-  title: "SwiftCart: Case Study | Tsolaye",
+  title: "SwiftCart: Case Study",
   description:
     "SwiftCart is an iOS shopping app that makes finding a product as quick as saying it and keeps one honest total from cart to receipt.",
 };
@@ -29,7 +29,7 @@ const GLASS_DARK =
 
 function Label({
   children,
-  className = "text-[#8a8d93]",
+  className = "text-[#64666a]",
 }: {
   children: React.ReactNode;
   className?: string;
@@ -47,7 +47,7 @@ function Heading({
   line1,
   line2,
   line1Class = "text-[#16171a]",
-  line2Class = "text-[#8a8d93]",
+  line2Class = "text-[#64666a]",
   className = "",
   reveal = false,
   dark = false,
@@ -169,7 +169,7 @@ function SpecRow({ label, value, last }: { label: string; value: string; last?: 
         last ? "border-b" : ""
       }`}
     >
-      <p className="font-semibold uppercase text-[#8a8d93] text-[13px] md:text-[16px] xl:text-[20px] tracking-[1.2px] xl:tracking-[1.6px] leading-[1.45]">
+      <p className="font-semibold uppercase text-[#64666a] text-[13px] md:text-[16px] xl:text-[20px] tracking-[1.2px] xl:tracking-[1.6px] leading-[1.45]">
         {label}
       </p>
       <p className="font-medium text-[#16171a] text-[17px] md:text-[20px] xl:text-[22px] leading-[1.45]">{value}</p>
@@ -277,8 +277,8 @@ export default function SwiftCartCaseStudy() {
         <section className={`bg-[#e4e4e6] ${PAD} ${SECTION_Y}`}>
           <div className="flex items-start justify-between gap-4">
             <Label>{"// UX CASE STUDY"}</Label>
-            <Label className="text-[#8a8d93] hidden sm:block">{"// IOS APP"}</Label>
-            <Label className="text-[#8a8d93] xl:tracking-[2.4px]">{"// 2026"}</Label>
+            <Label className="text-[#64666a] hidden sm:block">{"// IOS APP"}</Label>
+            <Label className="text-[#64666a] xl:tracking-[2.4px]">{"// 2026"}</Label>
           </div>
 
           <BlockReveal
@@ -287,7 +287,7 @@ export default function SwiftCartCaseStudy() {
             className="font-light text-[52px] sm:text-[72px] md:text-[96px] lg:text-[112px] xl:text-[128px] leading-none tracking-[-0.64px] mt-[40px] md:mt-[64px] xl:mt-[83px]"
           >
             <span className="block text-[#16171a]">Shop by voice.</span>
-            <span className="block text-[#8a8d93]">Pay one honest total.</span>
+            <span className="block text-[#64666a]">Pay one honest total.</span>
           </BlockReveal>
 
           <div className="mt-[48px] md:mt-[72px] xl:mt-[88px] grid grid-cols-1 lg:grid-cols-[620fr_460fr] gap-[40px] lg:gap-[80px] items-start">
@@ -356,7 +356,7 @@ export default function SwiftCartCaseStudy() {
                   of US shoppers who abandoned a checkout said extra costs (shipping, tax, fees) were the reason.
                   It is the top reason in the study.
                 </p>
-                <p className="font-medium text-[#8a8d93] text-[16px] xl:text-[20px] leading-[1.35] mt-auto">
+                <p className="font-medium text-[#64666a] text-[16px] xl:text-[20px] leading-[1.35] mt-auto">
                   Source: Baymard Institute, cart abandonment research
                 </p>
               </div>
@@ -366,7 +366,7 @@ export default function SwiftCartCaseStudy() {
                   <Label>{"// WHAT WE SET OUT TO DO"}</Label>
                   <p className="font-light text-[34px] md:text-[40px] xl:text-[44px] leading-[1.04] tracking-[-0.32px]">
                     <span className="block text-[#16171a]">Say it, see it,</span>
-                    <span className="block text-[#cc4e00]">then pay it</span>
+                    <span className="block text-[#ae4200]">then pay it</span>
                   </p>
                 </div>
                 <p className="font-medium text-[#5e6168] text-[18px] md:text-[20px] xl:text-[22px] leading-[1.4] mt-auto">
@@ -429,17 +429,17 @@ export default function SwiftCartCaseStudy() {
               <div className="flex flex-col gap-[20px]">
                 <div className={`${GLASS} p-[24px] md:p-[32px]`}>
                   <Label>{"// OPTION A"}</Label>
-                  <p className="font-light text-[#8a8d93] text-[26px] md:text-[32px] leading-[1.45] tracking-[-0.32px] mt-[8px]">
+                  <p className="font-light text-[#64666a] text-[26px] md:text-[32px] leading-[1.45] tracking-[-0.32px] mt-[8px]">
                     A separate voice tab
                   </p>
-                  <p className="font-medium text-[#8a8d93] text-[18px] md:text-[22px] leading-[1.4] mt-[12px]">
+                  <p className="font-medium text-[#64666a] text-[18px] md:text-[22px] leading-[1.4] mt-[12px]">
                     Simple to build, but hidden. Voice would feel like a different product inside the app.
                   </p>
                 </div>
 
                 <div className={`${GLASS} bg-white/45 p-[24px] md:p-[32px]`}>
                   <div className="flex items-start justify-between gap-4">
-                    <Label className="text-[#cc4e00]">{"// OPTION B"}</Label>
+                    <Label className="text-[#ae4200]">{"// OPTION B"}</Label>
                     <span className="-mt-[2px] md:-mt-[8px] rounded-full bg-[#ff7a00] text-white font-bold text-[14px] md:text-[20px] tracking-[1.2px] md:tracking-[1.6px] uppercase px-[16px] h-[32px] md:h-[40px] flex items-center leading-none">
                       Chosen
                     </span>
@@ -452,7 +452,7 @@ export default function SwiftCartCaseStudy() {
                     Typing stays one tap away.
                   </p>
                   <div className="h-px bg-[rgba(22,23,26,0.12)] my-[24px]" />
-                  <Label className="text-[#cc4e00]">{"// WHY WE CHOSE OPTION B"}</Label>
+                  <Label className="text-[#ae4200]">{"// WHY WE CHOSE OPTION B"}</Label>
                   <p className="font-medium text-[#16171a] text-[18px] md:text-[22px] leading-[1.4] mt-[16px]">
                     Voice inside search means there is nothing new to learn. The sheet keeps Home visible behind it,
                     so people never feel they left the store.
@@ -480,7 +480,7 @@ export default function SwiftCartCaseStudy() {
                 <div className="snap-center shrink-0 w-[240px] md:w-full md:max-w-[290px] xl:w-[290px] md:-mt-[24px] xl:-mt-[40px]">
                   <Phone290 src="voice-listening.png" alt="Listening sheet showing the spoken request as it is heard" />
                   <div className="mt-[28px] xl:mt-[34px] px-[8px]">
-                    <CaptionTitle className="text-[#cc4e00]">02&nbsp; Listen live</CaptionTitle>
+                    <CaptionTitle className="text-[#ae4200]">02&nbsp; Listen live</CaptionTitle>
                     <CaptionBody>Words appear as they are heard.</CaptionBody>
                   </div>
                 </div>
@@ -505,7 +505,7 @@ export default function SwiftCartCaseStudy() {
                   sizes="140px"
                   className="w-[84px] min-[420px]:w-[110px] md:w-[140px]"
                 />
-                <span className="font-light text-[#ff7a00] text-[32px] leading-none">→</span>
+                <span className="font-light text-[#cc4e00] text-[32px] leading-none">→</span>
                 <Phone
                   src="final-home-small.png"
                   alt="Final Home screen with the mic inside the search bar"
@@ -541,7 +541,7 @@ export default function SwiftCartCaseStudy() {
               Many checkouts show a subtotal, an estimate and a final total on different screens, so the number
               people agree to keeps moving.
             </DecisionBlock>
-            <DecisionBlock label="// THE DECISION" labelClass="text-[#cc4e00]" bodyClass="text-[#16171a]">
+            <DecisionBlock label="// THE DECISION" labelClass="text-[#ae4200]" bodyClass="text-[#16171a]">
               Every fee appears before payment. The same total sits on the pay button, the confirmation and the
               receipt.
             </DecisionBlock>
@@ -609,7 +609,7 @@ export default function SwiftCartCaseStudy() {
             <div className="mt-[40px] md:mt-[72px] xl:mt-[110px] max-w-[1160px] mx-auto grid grid-cols-1 xl:grid-cols-[330px_420px_330px] gap-[24px] xl:gap-[40px] items-start">
               <div className="order-2 xl:order-1 flex flex-col gap-[16px] xl:gap-[131px] xl:mt-[113px]">
                 <div className={`${GLASS} !rounded-[24px] bg-white/40 p-[22px] md:p-[24px] xl:h-[179px]`}>
-                  <Label className="text-[#cc4e00]">{"// SEARCH THAT LISTENS"}</Label>
+                  <Label className="text-[#ae4200]">{"// SEARCH THAT LISTENS"}</Label>
                   <p className="font-medium text-[#16171a] text-[18px] md:text-[20px] xl:text-[22px] leading-[1.4] mt-[14px]">
                     Type, or tap the mic in the same bar. The hint shows what you can say.
                   </p>
@@ -617,7 +617,7 @@ export default function SwiftCartCaseStudy() {
                   <span aria-hidden className="hidden xl:block absolute left-[calc(100%+75px)] top-1/2 size-[12px] -translate-y-1/2 rounded-full bg-[#ff7a00]" />
                 </div>
                 <div className={`${GLASS} !rounded-[24px] bg-white/40 p-[22px] md:p-[24px] xl:h-[179px]`}>
-                  <Label className="text-[#cc4e00]">{"// PICKED FOR YOU"}</Label>
+                  <Label className="text-[#ae4200]">{"// PICKED FOR YOU"}</Label>
                   <p className="font-medium text-[#16171a] text-[18px] md:text-[20px] xl:text-[22px] leading-[1.4] mt-[14px]">
                     Based on what you bought last month, so reordering is one tap.
                   </p>
@@ -638,7 +638,7 @@ export default function SwiftCartCaseStudy() {
 
               <div className="order-3 xl:mt-[325px]">
                 <div className={`${GLASS} !rounded-[24px] bg-white/40 p-[22px] md:p-[24px] xl:h-[179px]`}>
-                  <Label className="text-[#cc4e00]">{"// VOICE DEAL"}</Label>
+                  <Label className="text-[#ae4200]">{"// VOICE DEAL"}</Label>
                   <p className="font-medium text-[#16171a] text-[18px] md:text-[20px] xl:text-[22px] leading-[1.4] mt-[14px]">
                     A daily deal you unlock by saying it, so people try voice once and learn it.
                   </p>
@@ -661,7 +661,7 @@ export default function SwiftCartCaseStudy() {
                   />
                 </div>
                 <div className="min-w-0 xl:w-[220px] xl:shrink-0 xl:mt-[211px]">
-                  <Label className="text-[#cc4e00]">{"// VOICE RESULTS"}</Label>
+                  <Label className="text-[#ae4200]">{"// VOICE RESULTS"}</Label>
                   <p className="font-medium text-[#16171a] text-[20px] xl:text-[24px] leading-[1.45] mt-[16px] max-w-[320px]">
                     What you said stays at the top. Every result adds in one tap.
                   </p>
@@ -678,7 +678,7 @@ export default function SwiftCartCaseStudy() {
                   />
                 </div>
                 <div className="min-w-0 xl:w-[220px] xl:shrink-0 xl:mt-[211px]">
-                  <Label className="text-[#cc4e00]">{"// PRODUCT"}</Label>
+                  <Label className="text-[#ae4200]">{"// PRODUCT"}</Label>
                   <p className="font-medium text-[#16171a] text-[20px] xl:text-[24px] leading-[1.45] mt-[16px] max-w-[320px]">
                     Price, arrival date and returns are clear before you commit.
                   </p>

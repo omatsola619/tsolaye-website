@@ -19,7 +19,7 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Pill Pal: Case Study | Tsolaye",
+  title: "Pill Pal: Case Study",
   description:
     "Pill Pal is an accessibility-first medication companion that helps people take the right medicine at the right time.",
 };
@@ -112,7 +112,7 @@ function Tag({
 
 function Label({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-semibold text-[#9aa0ae] text-[16px] md:text-[20px] leading-[1.5] tracking-[1.6px] uppercase">
+    <p className="font-semibold text-[#6b6f79] text-[16px] md:text-[20px] leading-[1.5] tracking-[1.6px] uppercase">
       {children}
     </p>
   );
@@ -129,7 +129,7 @@ function Body({
 }) {
   return (
     <p
-      className={`text-[19px] md:text-[24px] leading-[1.5] ${dark ? "text-[#1e2433]" : "text-[#6b7287]"} ${className}`}
+      className={`text-[19px] md:text-[24px] leading-[1.5] ${dark ? "text-[#1e2433]" : "text-[#676d82]"} ${className}`}
     >
       {children}
     </p>
@@ -337,11 +337,11 @@ function Option({
         )}
       </div>
       <p
-        className={`text-[22px] md:text-[26px] leading-[1.2] tracking-[-0.26px] ${chosen ? "text-[#1e2433]" : "text-[#6b7287]"}`}
+        className={`text-[22px] md:text-[26px] leading-[1.2] tracking-[-0.26px] ${chosen ? "text-[#1e2433]" : "text-[#676d82]"}`}
       >
         {title}
       </p>
-      <p className={`text-[18px] md:text-[20px] leading-[1.5] ${chosen ? "text-[#6b7287]" : "text-[#9aa0ae]"}`}>
+      <p className={`text-[18px] md:text-[20px] leading-[1.5] ${chosen ? "text-[#676d82]" : "text-[#6b6f79]"}`}>
         {desc}
       </p>
     </div>
@@ -351,7 +351,7 @@ function Option({
 function FloatCard({ label, value, dot }: { label: string; value: string; dot: keyof typeof DOT }) {
   return (
     <div className="relative bg-white border border-[#eceef2] rounded-[20px] shadow-[0_12px_16px_rgba(10,26,51,0.04)] px-[21px] py-[19px] w-full sm:w-[280px] min-[1400px]:h-[101px]">
-      <p className="text-[#6b7287] text-[17px] md:text-[20px] leading-[1.3]">{label}</p>
+      <p className="text-[#676d82] text-[17px] md:text-[20px] leading-[1.3]">{label}</p>
       <p className="mt-[6px] font-semibold text-[#1e2433] text-[20px] md:text-[24px] leading-[1.2]">{value}</p>
       <span className="absolute right-[23px] top-[25px] size-[10px] rounded-full" style={{ background: DOT[dot] }} />
     </div>
@@ -382,7 +382,7 @@ function ResultCard({
           style={{ width: `${pct}%` }}
         />
       </div>
-      <p className="text-[#6b7287] text-[18px] md:text-[20px] leading-[1.5] -mt-[8px]">completed without help</p>
+      <p className="text-[#676d82] text-[18px] md:text-[20px] leading-[1.5] -mt-[8px]">completed without help</p>
     </div>
   );
 }
@@ -394,7 +394,7 @@ function Takeaway({ n, title, body }: { n: string; title: string; body: string }
       <p className="mt-[20px] font-light text-[#1e2433] text-[26px] md:text-[30px] leading-[1.15] tracking-[-0.3px]">
         {title}
       </p>
-      <p className="mt-[12px] text-[#6b7287] text-[18px] md:text-[22px] leading-[1.5]">{body}</p>
+      <p className="mt-[12px] text-[#676d82] text-[18px] md:text-[22px] leading-[1.5]">{body}</p>
     </div>
   );
 }
@@ -406,7 +406,7 @@ function ProblemCard({ n, title, body }: { n: string; title: string; body: strin
         <Tag dot="orange">{`Problem ${n}`}</Tag>
       </div>
       <p className="mt-[24px] text-[22px] md:text-[26px] leading-[1.2] tracking-[-0.26px] text-[#1e2433]">{title}</p>
-      <p className="mt-[16px] text-[18px] md:text-[20px] leading-[1.5] text-[#6b7287]">{body}</p>
+      <p className="mt-[16px] text-[18px] md:text-[20px] leading-[1.5] text-[#676d82]">{body}</p>
     </div>
   );
 }
@@ -418,7 +418,7 @@ function SolutionItem({ title, body, first }: { title: string; body: string; fir
         <span className="size-[12px] rounded-full bg-[#1fe8c9] shrink-0" />
         <p className="font-semibold text-[#1e2433] text-[19px] md:text-[22px] leading-[1.25]">{title}</p>
       </div>
-      <p className="mt-[8px] pl-[26px] text-[18px] md:text-[20px] leading-[1.5] text-[#6b7287]">{body}</p>
+      <p className="mt-[8px] pl-[26px] text-[18px] md:text-[20px] leading-[1.5] text-[#676d82]">{body}</p>
     </div>
   );
 }
@@ -526,7 +526,7 @@ export default function PillPalCaseStudy() {
             <div className="h-px bg-[#eceef2] w-full" />
           </Abs>
           <Abs x={80} y={1400}>
-            <p className="text-[#6b7287] text-[18px] md:text-[20px] leading-[1.35]">
+            <p className="text-[#676d82] text-[18px] md:text-[20px] leading-[1.35]">
               Unpacking the
               <br />
               entire Pill Pal project
@@ -534,19 +534,19 @@ export default function PillPalCaseStudy() {
           </Abs>
           <Abs x={369} y={1404} className="flex flex-wrap gap-[12px]">
             <Tag dot="blue">
-              <span className="text-[#9aa0ae]">Project</span>
+              <span className="text-[#6b6f79]">Project</span>
               {"   Pill Pal"}
             </Tag>
             <Tag dot="blue">
-              <span className="text-[#9aa0ae]">Category</span>
+              <span className="text-[#6b6f79]">Category</span>
               {"   Healthcare"}
             </Tag>
             <Tag dot="blue">
-              <span className="text-[#9aa0ae]">Role</span>
+              <span className="text-[#6b6f79]">Role</span>
               {"   Product Designer"}
             </Tag>
             <Tag dot="blue">
-              <span className="text-[#9aa0ae]">Platform</span>
+              <span className="text-[#6b6f79]">Platform</span>
               {"   iOS"}
             </Tag>
           </Abs>
@@ -817,7 +817,7 @@ export default function PillPalCaseStudy() {
               ih={665}
             />
             <Abs x={385} y={1935} w={40} className="text-center">
-              <span className="block text-[#9aa0ae] text-[40px] leading-[60px] rotate-90 sm:rotate-0">→</span>
+              <span className="block text-[#6b6f79] text-[40px] leading-[60px] rotate-90 sm:rotate-0">→</span>
             </Abs>
             <Phone
               src={`${P}/reminders-final-home.avif`}
@@ -1103,7 +1103,7 @@ export default function PillPalCaseStudy() {
               <p className="mt-[28px] md:mt-[40px] font-light text-[#1e2433] text-[24px] md:text-[34px] leading-[1.3] tracking-[-0.34px] max-w-[900px]">
                 “I like that it waits for me. I tap Taken and I know it is done.”
               </p>
-              <p className="mt-[16px] text-[#6b7287] text-[16px] md:text-[20px] leading-[1.5] whitespace-pre-wrap">
+              <p className="mt-[16px] text-[#676d82] text-[16px] md:text-[20px] leading-[1.5] whitespace-pre-wrap">
                 {"Tester, 68  ·  Takes three daily medicines"}
               </p>
             </div>
